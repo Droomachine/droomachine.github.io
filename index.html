@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123581449-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123581449-1');
+</script>
+
+  <meta charset="UTF-8">
+  <title>Pokemon GO Pokedex</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="#home">
+  <img id="logo" src="https://www.freepnglogos.com/uploads/pokemon-go-png-logo/pokemon-go-mewtwo-generator-png-logo-18.png" alt="Pokemon GO Pokedex">
+  </a>
+  <a href="#settings" id="settings">
+  <img id="cog" src="https://www.iconspng.com/uploads/cog-1/cog-1.png" alt="Settings" style="width:30px;height:30px">
+  </a>
+
+
+</div>
+
+<div id="myProgress"><div id="barLabel"></div>
+  <div id="myBar"></div>
+</div>
+  <div ng-cloak ng-app="app" ng-controller="PokedexController as pokedex">
+  <div ng-repeat="gen in pokedex.gens">
+    <div id="gen">Gen {{$index + 1}}</div>
+      <table ng-repeat="group in gen | chunkBy: 8">
+        <tr>
+            <td ng-repeat="pokemon in group">
+              <label class="container" id="cont{{pokemon.id}}">
+                <input type="checkbox" id={{pokemon.id}}>
+                <span class="checkmark"></span>
+                <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+              </label>
+
+            </td>
+  </tr>
+</table>
+
+<br></br>
+
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+
+</html>
