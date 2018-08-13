@@ -15,7 +15,7 @@ body{
    text-align: center;
 }
 .columns {
-    display:inline-grid;
+    display: inline-block;
     position: relative;
     width: 200px;
     padding: 1px;
@@ -182,11 +182,6 @@ body{
 {
   display: none !important;
 }
-
-.progressive img{
-  height: 120px;
-}
-
 @media only screen and (max-width: 600px) {
   .columns {
       width: 100px;
@@ -195,7 +190,6 @@ body{
     height: 70px;
   }
   .pokemon-name {
-    padding-top:10px;
     font-size: 8px;
   }
   .container {
@@ -203,19 +197,4 @@ body{
   }
   #barLabel {
     font-size:13px;
-  }
-  .progressive img{
-    height: 70px;
-  }
-}
-
-
-.progressive img.reveal {
-  will-change: transform, opacity;
-  animation: progressiveReveal 0.5s ease-out;
-}
-
-@keyframes progressiveReveal {
-	0% { transform: scale(0); opacity: 0; }
-	100% { transform: scale(1); opacity: 1; }
 }

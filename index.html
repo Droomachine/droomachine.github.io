@@ -53,6 +53,17 @@
 
 </div>
 
+<!---
+<div class="columns" ng-repeat="shinies in shinrs | orderBy:['-checked', 'number']:false | filter:CDFilter">
+            <img class="icon" ng-src="{{ shinies.icon }}">
+            <h2 class="titletwo">{{ shinies.title }}</h2>
+            <label class="cbox">
+                <input id="shinies{{$index}}" type="checkbox" ng-model="shinies.checked">
+                <span class="checkmark"></span>
+            </label>
+
+        </div>--->
+
 <div id="myProgress"><div id="barLabel"></div>
   <div id="myBar"></div>
 </div>
@@ -64,11 +75,7 @@
                 <input type="checkbox" name="dex" id={{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
-
-                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
-
-                <!--<img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
--->
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
               </label>
 
             </div>
@@ -78,8 +85,8 @@
                 <input type="checkbox" name="dex"  id={{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
-                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
-                </label>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+              </label>
 
             </div>
 
@@ -90,7 +97,6 @@
                 <span class="checkmark"></span>
                 <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
                 <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
-                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
               </label>
 
             </div>
@@ -101,7 +107,7 @@
                 <input type="checkbox" id=shiny{{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">{{pokemon.name}}</div>
-                <figure data-href="https://www.serebii.net/pokemongo/pokemon/shiny/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/shiny/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
               </label>
 
             </div>
@@ -112,7 +118,7 @@
                 <input type="checkbox" id=special{{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">{{pokemon.name}}</div>
-                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
               </label>
 
             </div>
@@ -123,7 +129,7 @@
                 <input type="checkbox" id=alolan{{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">{{pokemon.name}}</div>
-                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
               </label>
 
             </div>
@@ -137,7 +143,6 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="js/index.js"></script>
-<script src="js/progressive-image.js"></script>
 
 </body>
 
