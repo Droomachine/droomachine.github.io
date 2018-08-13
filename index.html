@@ -75,7 +75,7 @@
                 <input type="checkbox" name="dex" id={{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
-                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
               </label>
 
             </div>
@@ -85,7 +85,7 @@
                 <input type="checkbox" name="dex"  id={{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
-                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
               </label>
 
             </div>
@@ -96,7 +96,7 @@
                 <input type="checkbox" name="dex" id={{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
-                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
               </label>
 
             </div>
@@ -106,8 +106,7 @@
               <label class="container" id="contshiny{{pokemon.id}}">
                 <input type="checkbox" id=shiny{{pokemon.id}}>
                 <span class="checkmark"></span>
-                <div class="pokemon-name">{{pokemon.name}}</div>
-                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/shiny/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+                <div class="pokemon-name">{{pokemon.name}}</div><figure data-href="https://www.serebii.net/pokemongo/pokemon/shiny/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
               </label>
 
             </div>
@@ -118,7 +117,7 @@
                 <input type="checkbox" id=special{{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">{{pokemon.name}}</div>
-                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
               </label>
 
             </div>
@@ -129,7 +128,7 @@
                 <input type="checkbox" id=alolan{{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">{{pokemon.name}}</div>
-                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
               </label>
 
             </div>
@@ -143,6 +142,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="js/index.js"></script>
+<script src="js/progressive-image.js"></script>
 
 </body>
 
