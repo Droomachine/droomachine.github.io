@@ -17,52 +17,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <style>
-  @media only screen and (max-width: 600px) {
-    .columns {
-        width: 100px;
-    }
-    .pokemon-image {
-      height: 70px;
-    }
-    .pokemon-name {
-      font-size: 8px;
-    }
-    .container {
-        height:100px;
-    }
-    #barLabel {
-      font-size:13px;
-  }
-}
-</style>
+
 </head>
 
 <body>
   <div class="topnav">
-    <a href="/">
-  <img id="logo" src="https://www.freepnglogos.com/uploads/pokemon-go-png-logo/pokemon-go-mewtwo-generator-png-logo-18.png" alt="Pokemon GO Pokedex">
+  <a href="/">
+    <img id="logo" src="logo.png" alt="Pokemon GO Pokedex">
   </a>
-  <!--<a id="statsLink" href="stats.html">Stats
-</a>-->
-  <!--
-  <a href="#settings" id="settings">
-  <img id="cog" src="https://www.iconspng.com/uploads/cog-1/cog-1.png" alt="Settings" style="width:30px;height:30px">
-</a>-->
-
-
+  <div class="topnav-right">
+    <a id="export" href="#" title="Export">Export</a>
+    <a id="import"href="#" title="Import">Import</a>
+  </div>
 </div>
 
-<!---
-<div class="columns" ng-repeat="shinies in shinrs | orderBy:['-checked', 'number']:false | filter:CDFilter">
-            <img class="icon" ng-src="{{ shinies.icon }}">
-            <h2 class="titletwo">{{ shinies.title }}</h2>
-            <label class="cbox">
-                <input id="shinies{{$index}}" type="checkbox" ng-model="shinies.checked">
-                <span class="checkmark"></span>
-            </label>
-
-        </div>--->
 
 <div id="myProgress"><div id="barLabel"></div>
   <div id="myBar"></div>
@@ -144,6 +112,9 @@
 <script src="js/index.js"></script>
 <script src="js/progressive-image.js"></script>
 
+<footer>
+  <p>Thanks to Raighar and Andrew Archibald!</p>
+</footer>
 </body>
 
 </html>

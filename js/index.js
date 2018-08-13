@@ -1,4 +1,7 @@
+
+
 $(document).ready(function () {
+
     if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0)
     {
       var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem('checked-checkboxes'));
@@ -40,6 +43,67 @@ $(document).ready(function () {
       document.getElementById("barLabel").innerHTML += " / 386 completed";
       localStorage.setItem('checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
     });
+
+
+
+    $("#export").on("click", startExport);
+    $("#import").on("click", function() { alert("To import data, simply paste the copied data!"); });
+    $("#toString").on("click", toString);
+    $(window).on("paste", function(e) {
+      startImport(e.originalEvent.clipboardData.getData("text/plain"));
+    });
+
+    function copyToClipboard(text) {
+      var dummy = $('<div>');
+      $("body").append(dummy);
+      dummy.attr("contenteditable", true)
+        .html(text).select()
+        .on("focus", function() { document.execCommand("selectAll", false, null) })
+        .focus();
+
+      document.execCommand("copy");
+      dummy.remove();
+      alert("Copied to Clipboard!");
+    }
+
+
+      function startExport() {
+        if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0) {
+          var encoded = btoa(localStorage.getItem('checked-checkboxes'));
+          copyToClipboard(encoded);
+        } else {
+          alert("Nothing to export!");
+        }
+      }
+
+      function startImport(data) {
+        try {
+          var decoded = atob(data);
+          var arrCheckedCheckboxes = $.parseJSON(decoded);
+
+          // simple document ready code
+          $(arrCheckedCheckboxes.toString()).prop('checked', true);
+          arrCheckedCheckboxes.forEach(function(obj) {
+            var num = "cont";
+            var n = obj.substr(1);
+            num += n;
+            document.getElementById(num).style.backgroundColor = "#62D17A";
+          })
+          var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
+          var width = Math.round(checkedBoxes.length/386*10000)/100;
+          document.getElementById("myBar").style.width = width + '%';
+          document.getElementById("barLabel").innerHTML = "Pokedex Completion: ";
+          document.getElementById("barLabel").innerHTML += width * 1  + '%';
+          document.getElementById("barLabel").innerHTML += " | ";
+          document.getElementById("barLabel").innerHTML += checkedBoxes.length;
+          document.getElementById("barLabel").innerHTML += " / 386 completed";
+
+          alert("Import successful!");
+        } catch (Exception) {
+          alert("Pasted invalid data!")
+        }
+      }
+
 });
 
 
