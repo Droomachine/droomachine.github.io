@@ -157,8 +157,27 @@ body{
   color: black;
   font-size:18px;
 }
+.jump{
+  padding-top:10px;
+  text-align:center;
+  font-size: 20px;
+}
 
-#gen{
+.jump a:link, a:visited {
+    background-color: #0094DE;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+.jump a:hover, a:active {
+    background-color: gray;
+}
+
+.gen{
   margin-top:10px;
   margin-bottom: 10px;
   text-align:center;
@@ -226,7 +245,7 @@ footer{
   background-color: #333;
   display: flex;             /* establish flex container */
   align-items: center;       /* center ul container vertically */
-  
+
 
 }
 
@@ -254,4 +273,18 @@ footer{
 
 .topnav-right {
   float: right;
+}
+
+#topBtn {
+    display: none; /* Hidden by default */
+    width:50px;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    left: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+
 }

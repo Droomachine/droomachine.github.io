@@ -1,57 +1,34 @@
 
-
-$(document).ready(function () {
-
-    if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0)
-    {
-      var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem('checked-checkboxes'));
-      $(arrCheckedCheckboxes.toString()).prop('checked', true);
-      arrCheckedCheckboxes.forEach(function(obj) {
-        var num = "cont";
-        var n = obj.substr(1);
-        num += n;
-        document.getElementById(num).style.backgroundColor = "#62D17A";
-      })
-      var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-      var width = Math.round(checkedBoxes.length/386*10000)/100;
-      document.getElementById("myBar").style.width = width + '%';
-      document.getElementById("barLabel").innerHTML = "Pokedex Completion: ";
-      document.getElementById("barLabel").innerHTML += width * 1  + '%';
-      document.getElementById("barLabel").innerHTML += " | ";
-      document.getElementById("barLabel").innerHTML += checkedBoxes.length;
-      document.getElementById("barLabel").innerHTML += " / 386 completed";
-    }
-    $("input:checkbox").change(function () {
-      var arrCheckedCheckboxes = [];
-      $.each($("input:checkbox:checked"), function () {
-          arrCheckedCheckboxes.push("#" + $(this).attr('id'));
-      });
-      var num = "cont";
-      num += $(this).attr('id');
-      if(this.checked){
-        document.getElementById(num).style.backgroundColor = "#62D17A";
-      }
-      else{
-        document.getElementById(num).style.backgroundColor = "#D3D3D3";}
-      var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-      var width = Math.round(checkedBoxes.length/386*10000)/100;
-      document.getElementById("myBar").style.width = width + '%';
-      document.getElementById("barLabel").innerHTML = "Pokedex Completion: ";
-      document.getElementById("barLabel").innerHTML += width * 1  + '%';
-      document.getElementById("barLabel").innerHTML += " | ";
-      document.getElementById("barLabel").innerHTML += checkedBoxes.length;
-      document.getElementById("barLabel").innerHTML += " / 386 completed";
-      localStorage.setItem('checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
-    });
-
-
-
     $("#export").on("click", startExport);
     $("#import").on("click", function() { alert("To import data, simply paste the copied data!"); });
     $("#toString").on("click", toString);
     $(window).on("paste", function(e) {
       startImport(e.originalEvent.clipboardData.getData("text/plain"));
     });
+
+    function confirmation() {
+      if (confirm("Are you sure you want to reset?")) {
+        localStorage.clear();
+         window.location.href ="/"
+         window.scrollTo(0,0);
+      }
+}
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
     function copyToClipboard(text) {
       var dummy = $('<div>');
@@ -103,6 +80,50 @@ $(document).ready(function () {
           alert("Pasted invalid data!")
         }
       }
+
+$(document).ready(function () {
+
+    if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0)
+    {
+      var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem('checked-checkboxes'));
+      $(arrCheckedCheckboxes.toString()).prop('checked', true);
+      arrCheckedCheckboxes.forEach(function(obj) {
+        var num = "cont";
+        var n = obj.substr(1);
+        num += n;
+        document.getElementById(num).style.backgroundColor = "#62D17A";
+      })
+      var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
+      var width = Math.round(checkedBoxes.length/386*10000)/100;
+      document.getElementById("myBar").style.width = width + '%';
+      document.getElementById("barLabel").innerHTML = "Pokedex Completion: ";
+      document.getElementById("barLabel").innerHTML += width * 1  + '%';
+      document.getElementById("barLabel").innerHTML += " | ";
+      document.getElementById("barLabel").innerHTML += checkedBoxes.length;
+      document.getElementById("barLabel").innerHTML += " / 386 completed";
+    }
+    $("input:checkbox").change(function () {
+      var arrCheckedCheckboxes = [];
+      $.each($("input:checkbox:checked"), function () {
+          arrCheckedCheckboxes.push("#" + $(this).attr('id'));
+      });
+      var num = "cont";
+      num += $(this).attr('id');
+      if(this.checked){
+        document.getElementById(num).style.backgroundColor = "#62D17A";
+      }
+      else{
+        document.getElementById(num).style.backgroundColor = "#D3D3D3";}
+      var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
+      var width = Math.round(checkedBoxes.length/386*10000)/100;
+      document.getElementById("myBar").style.width = width + '%';
+      document.getElementById("barLabel").innerHTML = "Pokedex Completion: ";
+      document.getElementById("barLabel").innerHTML += width * 1  + '%';
+      document.getElementById("barLabel").innerHTML += " | ";
+      document.getElementById("barLabel").innerHTML += checkedBoxes.length;
+      document.getElementById("barLabel").innerHTML += " / 386 completed";
+      localStorage.setItem('checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
+    });
 
 });
 

@@ -32,12 +32,23 @@
 </div>
 
 
+
+
 <div id="myProgress"><div id="barLabel"></div>
   <div id="myBar"></div>
 </div>
 
+<div class="jump">
+<a href="#gen1">Gen 1</a>
+<a href="#gen2">Gen 2</a>
+<a href="#gen3">Gen 3</a>
+<a href="#shiny">Shinies</a>
+<a href="#special">Special</a>
+<a href="#alolan">Alolan</a>
+</div>
+
   <div class="wrapper" ng-cloak ng-app="app" ng-controller="PokedexController as pokedex">
-    <div id="gen">Gen 1</div>
+    <div class="gen" id="gen1">Gen 1</div>
             <div class="columns" ng-repeat="pokemon in pokedex.genOne | orderBy:['id']:false | filter:CDFilter">
               <label class="container" id="cont{{pokemon.id}}">
                 <input type="checkbox" name="dex" id={{pokemon.id}}>
@@ -47,7 +58,7 @@
               </label>
 
             </div>
-            <div id="gen">Gen 2</div>
+            <div class="gen" id="gen2">Gen 2</div>
             <div class="columns" ng-repeat="pokemon in pokedex.genTwo | orderBy:['id']:false | filter:CDFilter">
               <label class="container" id="cont{{pokemon.id}}">
                 <input type="checkbox" name="dex"  id={{pokemon.id}}>
@@ -58,7 +69,7 @@
 
             </div>
 
-            <div id="gen">Gen 3</div>
+            <div class="gen" id="gen3">Gen 3</div>
             <div class="columns" ng-repeat="pokemon in pokedex.genThree | orderBy:['id']:false | filter:CDFilter">
               <label class="container" id="cont{{pokemon.id}}">
                 <input type="checkbox" name="dex" id={{pokemon.id}}>
@@ -69,7 +80,7 @@
 
             </div>
 
-            <div id="gen">Shinies</div>
+            <div class="gen" id="shiny">Shinies</div>
             <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.shinies | orderBy:['id']:false | filter:CDFilter">
               <label class="container" id="contshiny{{pokemon.id}}">
                 <input type="checkbox" id=shiny{{pokemon.id}}>
@@ -79,7 +90,7 @@
 
             </div>
 
-            <div id="gen">Special</div>
+            <div class="gen" id="special">Special</div>
             <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.special | filter:CDFilter">
               <label class="container" id="contspecial{{pokemon.id}}">
                 <input type="checkbox" id=special{{pokemon.id}}>
@@ -90,7 +101,7 @@
 
             </div>
 
-            <div id="gen">Alolan</div>
+            <div class="gen" id="alolan">Alolan</div>
             <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.alolan | filter:CDFilter">
               <label class="container" id="contalolan{{pokemon.id}}">
                 <input type="checkbox" id=alolan{{pokemon.id}}>
@@ -102,8 +113,7 @@
             </div>
 
 <br></br>
-
-
+<input onclick="topFunction()" id="topBtn" title="Go to top"type="image" src="top.png" />
 
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
@@ -113,6 +123,7 @@
 <script src="js/progressive-image.js"></script>
 
 <footer>
+  <button onclick="confirmation()">Reset</button>
   <p>Thanks to Raighar and Andrew Archibald!</p>
 </footer>
 </body>
