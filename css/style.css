@@ -172,6 +172,9 @@ body{
 .progressive img{
   height: 120px;
 }
+.topnav{
+  justify-content: space-between;
+}
 
 @media only screen and (max-width: 600px) {
   .columns {
@@ -192,6 +195,12 @@ body{
   }
   .progressive img{
     height: 70px;
+  }
+  .topnav-right{
+    display:none;
+  }
+  .topnav{
+    justify-content: center;
   }
 }
 
@@ -217,7 +226,7 @@ footer{
   background-color: #333;
   display: flex;             /* establish flex container */
   align-items: center;       /* center ul container vertically */
-  justify-content: space-between;
+  
 
 }
 
