@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  
     if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0)
     {
       var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem('checked-checkboxes'));
