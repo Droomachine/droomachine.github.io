@@ -123,7 +123,7 @@
             <div id="gen">Alolan</div>
             <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.alolan | filter:CDFilter">
               <label class="container" id="contalolan{{pokemon.id}}">
-                <input type="checkbox" id={{pokemon.id}}-a>
+                <input type="checkbox" id=alolan{{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">{{pokemon.name}}</div>
                 <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
