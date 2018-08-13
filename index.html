@@ -29,29 +29,69 @@
 
 </div>
 
+<!---
+<div class="columns" ng-repeat="shinies in shinrs | orderBy:['-checked', 'number']:false | filter:CDFilter">
+            <img class="icon" ng-src="{{ shinies.icon }}">
+            <h2 class="titletwo">{{ shinies.title }}</h2>
+            <label class="cbox">
+                <input id="shinies{{$index}}" type="checkbox" ng-model="shinies.checked">
+                <span class="checkmark"></span>
+            </label>
+
+        </div>--->
+
 <div id="myProgress"><div id="barLabel"></div>
   <div id="myBar"></div>
 </div>
-  <div ng-cloak ng-app="app" ng-controller="PokedexController as pokedex">
-  <div ng-repeat="gen in pokedex.gens">
-    <div id="gen">Gen {{$index + 1}}</div>
-      <table ng-repeat="group in gen | chunkBy: 8">
-        <tr>
-            <td ng-repeat="pokemon in group">
+
+  <div class="wrapper" ng-cloak ng-app="app" ng-controller="PokedexController as pokedex">
+    <div id="gen">Gen 1</div>
+            <div class="columns" ng-repeat="pokemon in pokedex.genOne | orderBy:['id']:false | filter:CDFilter">
               <label class="container" id="cont{{pokemon.id}}">
-                <input type="checkbox" id={{pokemon.id}}>
+                <input type="checkbox" name="dex" id={{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
                 <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
               </label>
 
-            </td>
-  </tr>
-</table>
+            </div>
+            <div id="gen">Gen 2</div>
+            <div class="columns" ng-repeat="pokemon in pokedex.genTwo | orderBy:['id']:false | filter:CDFilter">
+              <label class="container" id="cont{{pokemon.id}}">
+                <input type="checkbox" name="dex"  id={{pokemon.id}}>
+                <span class="checkmark"></span>
+                <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+              </label>
+
+            </div>
+
+            <div id="gen">Gen 3</div>
+            <div class="columns" ng-repeat="pokemon in pokedex.genThree | orderBy:['id']:false | filter:CDFilter">
+              <label class="container" id="cont{{pokemon.id}}">
+                <input type="checkbox" name="dex" id={{pokemon.id}}>
+                <span class="checkmark"></span>
+                <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+              </label>
+
+            </div>
+
+            <div id="gen">Shinies</div>
+            <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.shinies | orderBy:['id']:false | filter:CDFilter">
+              <label class="container" id="contshiny{{pokemon.id}}">
+                <input type="checkbox" id=shiny{{pokemon.id}}>
+                <span class="checkmark"></span>
+                <div class="pokemon-name">{{pokemon.name}}</div>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/shiny/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+              </label>
+
+            </div>
 
 <br></br>
 
-  </div>
+
+
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js'></script>
