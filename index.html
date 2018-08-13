@@ -15,6 +15,7 @@
   <title>Pokemon GO Pokedex</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" />
   <style>
   @media only screen and (max-width: 600px) {
     .columns {
@@ -104,6 +105,28 @@
                 <span class="checkmark"></span>
                 <div class="pokemon-name">{{pokemon.name}}</div>
                 <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/shiny/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+              </label>
+
+            </div>
+
+            <div id="gen">Special</div>
+            <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.special | filter:CDFilter">
+              <label class="container" id="contspecial{{pokemon.id}}">
+                <input type="checkbox" id=special{{pokemon.id}}>
+                <span class="checkmark"></span>
+                <div class="pokemon-name">{{pokemon.name}}</div>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
+              </label>
+
+            </div>
+
+            <div id="gen">Alolan</div>
+            <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.alolan | filter:CDFilter">
+              <label class="container" id="contalolan{{pokemon.id}}">
+                <input type="checkbox" id={{pokemon.id}}-a>
+                <span class="checkmark"></span>
+                <div class="pokemon-name">{{pokemon.name}}</div>
+                <img class="pokemon-image" ng-src="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png"  alt="{{pokemon.name}}" />
               </label>
 
             </div>
