@@ -74,6 +74,7 @@ function topFunction() {
           document.getElementById("barLabel").innerHTML += " | ";
           document.getElementById("barLabel").innerHTML += checkedBoxes.length;
           document.getElementById("barLabel").innerHTML += " / 386 completed";
+          localStorage.setItem('checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
 
           alert("Import successful!");
         } catch (Exception) {
