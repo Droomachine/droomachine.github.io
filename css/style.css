@@ -33,7 +33,7 @@ body{
 .pokemon-name {
   font-weight: bold;
   padding-top: 5%;
-  padding-left: 15%;
+  padding-left: 10%;
   font-size: 14px;
 }
 
@@ -151,15 +151,32 @@ body{
    text-align: center;
    width: 100%;
   color: black;
+  font-size:18px;
 }
 
 #gen{
   margin-top:10px;
   margin-bottom: 10px;
   text-align:center;
-  font-size: 2vw;
+  font-size: 20px;
 }
 [ng-cloak]
 {
   display: none !important;
+}
+@media only screen and (max-width: 600px) {
+  .columns {
+      width: 100px;
+  }
+  .pokemon-image {
+    max-width: 80%;
+  }
+  .pokemon-name {
+    font-size: 8px;
+  }
+  .container {
+      height:100px;
+  }
+  #barLabel {
+    font-size:13px;
 }
