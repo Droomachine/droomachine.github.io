@@ -9,14 +9,33 @@ body{
 .clearfix {
   clear: both;
 }
-
+.stats{
+  margin: auto;
+   width: 30%;
+   text-align: center;
+}
 .columns {
     display: inline-block;
     position: relative;
     width: 200px;
     padding: 1px;
 }
-
+#normalStats{
+  color:black;
+}
+#shinyStats{
+  color:black;
+}
+#specialStats{
+  color:black;
+}
+#alolanStats{
+  color:black;
+}
+#statsLink{
+  font-size:20px;
+  color:white;
+}
 .pokemon-image {
   height: 120px;
   display: block;
