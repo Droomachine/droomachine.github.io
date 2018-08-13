@@ -298,3 +298,21 @@ footer{
     padding: 15px; /* Some padding */
 
 }
+
+#reset{
+  background-color: red; /* Green */
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+#reset:hover{
+  background-color: darkred;
+}
