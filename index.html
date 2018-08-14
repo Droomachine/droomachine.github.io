@@ -45,6 +45,7 @@
 <a href="#shiny">Shinies</a>
 <a href="#special">Special</a>
 <a href="#alolan">Alolan</a>
+<a href="#unowns">Unowns</a>
 <a href="#unavailable">Missing</a>
 </div>
 
@@ -113,10 +114,21 @@
 
             </div>
 
+            <div class="gen" id="unowns">Unowns</div>
+            <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.unowns | filter:CDFilter">
+              <label class="container" id="contunowns{{pokemon.id}}">
+                <input type="checkbox" id=unowns{{pokemon.id}}>
+                <span class="checkmark"></span>
+                <div class="pokemon-name">{{pokemon.name}}</div>
+                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+              </label>
+
+            </div>
+
             <div class="gen" id="unavailable">Missing</div>
             <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.unavailable | filter:CDFilter">
               <label class="container">
-                <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
+                <div class="pokemon-name">{{pokemon.name}}</div>
                 <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
               </label>
 
