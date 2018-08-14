@@ -134,8 +134,8 @@ var PokedexController = /** @class */ (function () {
     function PokedexController(pokedexService) {
         this.pokedexService = pokedexService;
         this.genOne = this.pokedexService.entries.slice(0,151);
-        this.genTwo = this.pokedexService.entries.slice(151,251);
-        this.genThree = this.pokedexService.entries.slice(251,375);
+        this.genTwo = this.pokedexService.entries.slice(151,250);
+        this.genThree = this.pokedexService.entries.slice(250,375);
     }
     PokedexController.prototype.print = function () {
         window.print();
