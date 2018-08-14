@@ -45,6 +45,7 @@
 <a href="#shiny">Shinies</a>
 <a href="#special">Special</a>
 <a href="#alolan">Alolan</a>
+<a href="#unavailable">Missing</a>
 </div>
 
   <div class="wrapper" ng-cloak ng-app="app" ng-controller="PokedexController as pokedex">
@@ -107,6 +108,15 @@
                 <input type="checkbox" id=alolan{{pokemon.id}}>
                 <span class="checkmark"></span>
                 <div class="pokemon-name">{{pokemon.name}}</div>
+                <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+              </label>
+
+            </div>
+
+            <div class="gen" id="unavailable">Missing</div>
+            <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.unavailable | filter:CDFilter">
+              <label class="container">
+                <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
                 <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
               </label>
 

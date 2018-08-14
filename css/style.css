@@ -222,14 +222,22 @@ body{
   #barLabel {
     font-size:13px;
   }
-  .progressive img{
+  .progressive img {
     height: 70px;
   }
-  .topnav-right{
+  .topnav-right {
     display:none;
   }
-  .topnav{
+  .topnav {
     justify-content: center;
+  }
+  .jump a{
+    height:15px;
+    width:60px;
+    font-size: 14px;
+  }
+  .gen{
+    font-size:24px;
   }
 }
 
