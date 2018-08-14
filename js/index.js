@@ -1,10 +1,20 @@
 
     $("#export").on("click", startExport);
-    $("#import").on("click", function() { alert("To import data, simply paste the copied data!"); });
+    $("#import").on("click", function() {
+      startImport(prompt("Please paste your save:", ""));
+     });
     $("#toString").on("click", toString);
     $(window).on("paste", function(e) {
       startImport(e.originalEvent.clipboardData.getData("text/plain"));
     });
+
+    window.onload = function(){
+        document.getElementById('close').onclick = function(){
+            this.parentNode.parentNode.parentNode
+            .removeChild(this.parentNode.parentNode);
+            return false;
+        };
+    };
 
     function confirmation() {
       if (confirm("Are you sure you want to reset?")) {
@@ -40,14 +50,23 @@ function topFunction() {
 
       document.execCommand("copy");
       dummy.remove();
-      alert("Copied to Clipboard!");
     }
 
+  function hideForm(){
+    document.getElementById("clipboard").hidden = true;
+  }
 
       function startExport() {
         if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0) {
           var encoded = btoa(localStorage.getItem('checked-checkboxes'));
           copyToClipboard(encoded);
+          if (screen.width<"601"){
+            document.forms['yourform']['yourtextarea'].value = encoded;
+            document.getElementById("clipboard").hidden = false;
+          }
+          else{
+            alert("Copied to Clipboard!");  
+          }
         } else {
           alert("Nothing to export!");
         }

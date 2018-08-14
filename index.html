@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
   <div class="topnav">
   <a href="/">
     <img id="logo" src="logo.png" alt="Pokemon GO Pokedex">
@@ -36,6 +37,15 @@
 
 <div id="myProgress"><div id="barLabel"></div>
   <div id="myBar"></div>
+</div>
+
+<div hidden id = "clipboard">
+<!--  <span id='close'>x</span> -->
+    <form name="yourform" id="form">
+      <div id="saveText">Save this code!</div>
+    <textarea id="textArea" name="yourtextarea"></textarea>
+      <a id="hide" onclick="hideForm()" title="Hide">Hide</a>
+</form>
 </div>
 
 <div class="jump">
