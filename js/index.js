@@ -77,6 +77,7 @@ function topFunction() {
           localStorage.setItem('checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
 
           alert("Import successful!");
+          location.reload();
         } catch (Exception) {
           alert("Pasted invalid data!")
         }
