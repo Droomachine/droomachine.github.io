@@ -13,6 +13,55 @@
       startImport(e.originalEvent.clipboardData.getData("text/plain"));
     });
 
+    window.Clipboard = (function(window, document, navigator) {
+        var textArea,
+            copy;
+
+        function isOS() {
+            return navigator.userAgent.match(/ipad|iphone/i);
+        }
+
+        function createTextArea(text) {
+            textArea = document.createElement('textArea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+        }
+
+        function selectText() {
+            var range,
+                selection;
+
+            if (isOS()) {
+                range = document.createRange();
+                range.selectNodeContents(textArea);
+                selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                textArea.setSelectionRange(0, 999999);
+            } else {
+                textArea.select();
+            }
+        }
+
+        function copyToClipboard() {
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        }
+
+        copy = function(text) {
+            createTextArea(text);
+            selectText();
+            copyToClipboard();
+        };
+
+        return {
+            copy: copy
+        };
+    })(window, document, navigator);
+
+
+
+
     function confirmation() {
       if (confirm("Are you sure you want to reset?")) {
         localStorage.clear();
@@ -37,33 +86,12 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-    function copyToClipboard(text) {
-      var dummy = $('<div>');
-      $("body").append(dummy);
-      dummy.attr("contenteditable", true)
-        .html(text).select()
-        .on("focus", function() { document.execCommand("selectAll", false, null) })
-        .focus();
-
-      document.execCommand("copy");
-      dummy.remove();
-    }
-
-  function hideForm(){
-    document.getElementById("clipboard").hidden = true;
-  }
 
       function startExport() {
         if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0) {
           var encoded = btoa(localStorage.getItem('checked-checkboxes'));
-          copyToClipboard(encoded);
-          if (screen.width<"601"){
-            document.forms['yourform']['yourtextarea'].value = encoded;
-            document.getElementById("clipboard").hidden = false;
-          }
-          else{
-            alert("Copied to Clipboard!");
-          }
+          Clipboard.copy(encoded);
+          alert("Copied to Clipboard!");
         } else {
           alert("Nothing to export!");
         }
