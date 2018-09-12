@@ -2,51 +2,58 @@
   font-family: sans-serif;
   font-size: 1vw;
 }
-body{
+
+body {
   margin: auto;
 }
 
 .clearfix {
   clear: both;
 }
+
 .stats{
   margin: auto;
-   width: 30%;
-   text-align: center;
+  width: 30%;
+  text-align: center;
 }
+
 .columns {
-    display: inline-grid;
-    position: relative;
-    width: 200px;
-    padding: 1px;
+  display: inline-grid;
+  position: relative;
+  width: 200px;
+  padding: 1px;
 }
-#normalStats{
+
+#normalStats {
   color:black;
 }
-#shinyStats{
+
+#shinyStats {
   color:black;
 }
-#specialStats{
+
+#specialStats {
   color:black;
 }
-#alolanStats{
+
+#alolanStats {
   color:black;
 }
-#statsLink{
+
+#statsLink {
   font-size:20px;
   color:white;
 }
+
 .pokemon-image {
   height: 120px;
   display: block;
   margin: auto;
-
-
 }
-.wrapper{
+.wrapper {
   margin: auto;
-   width: 100%;
-   text-align:center;
+  width: 100%;
+  text-align:center;
 }
 .pokemon-name {
   font-weight: bold;
@@ -56,66 +63,65 @@ body{
 }
 
 .container {
-    display: block;
-    height:150px;
-    position: relative;
-    cursor: pointer;
-    background-color: lightgray;
+  display: block;
+  height:150px;
+  position: relative;
+  cursor: pointer;
+  background-color: lightgray;
 }
 
 /* Hide the browser's default checkbox */
 .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 }
 
 /* Create a custom checkbox */
 .checkmark {
-    position:absolute;
-    top: 5%;
-    left: 5%;
-    height: 15%;
-    width: 15%;
-    background-color: #eee;
+  position:absolute;
+  top: 5%;
+  left: 5%;
+  height: 15%;
+  width: 15%;
+  background-color: #eee;
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-    background-color: #2196F3;
+  background-color: #2196F3;
 }
 
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+  content: "";
+  position: absolute;
+  display: none;
 }
 
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
-    display: block;
+  display: block;
 }
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-    left: 35%;
-    top: 10%;
-    width: 25%;
-    height: 50%;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+  left: 35%;
+  top: 10%;
+  width: 25%;
+  height: 50%;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
-
 
 #settings {
   padding: 10px;
@@ -149,58 +155,61 @@ body{
   line-height: 30px;
   color: white;
 }
+
 #barLabel {
   margin-top: 5px;
   position: absolute;
-   text-align: center;
-   width: 100%;
+  text-align: center;
+  width: 100%;
   color: black;
   font-size:18px;
 }
-.jump{
+
+.jump {
   display:flex;             /* establish flex container */
   align-items: center;
-    justify-content: center;
-    width:100%;
-    background-color: #0094DE;
+  justify-content: center;
+  width:100%;
+  background-color: #0094DE;
   flex-wrap:wrap;
   margin:auto;
   text-align:center;
 }
-.jump a{
+
+.jump a {
   width:60px;
   font-size: 18px;
 }
 
 .jump a:link, a:visited {
-    background-color: #0094DE;
-    color: white;
-    padding: 10px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+  background-color: #0094DE;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
-
 
 .jump a:hover, a:active {
-    background-color: gray;
+  background-color: gray;
 }
 
-.gen{
+.gen {
   margin-top:10px;
   margin-bottom: 10px;
   text-align:center;
   font-weight: bold;
   font-size: 30px;
 }
-[ng-cloak]
-{
+
+[ng-cloak] {
   display: none !important;
 }
 
-.progressive img{
+.progressive img {
   height: 120px;
 }
+
 .topnav {
   justify-content: space-between;
 }
@@ -231,6 +240,7 @@ body{
   .columns {
       width: 100px;
   }
+
   .pokemon-image {
     height: 70px;
   }
@@ -238,36 +248,35 @@ body{
     padding-top:8px;
     font-size: 8px;
   }
+
   .container {
       height:100px;
   }
+
   #barLabel {
     padding-top:3px;
     font-size:13px;
   }
+
   .progressive img {
     height: 70px;
   }
-  .topnav-right {
 
-  }
-  .topnav {
-
-  }
-  .jump a{
+  .jump a {
     height:15px;
     width:60px;
     font-size: 14px;
   }
-  .gen{
+
+  .gen {
     font-size:24px;
   }
+
   .topnav-right a {
     font-size: 12px;
     padding: 30px 4px;
   }
 }
-
 
 .progressive img.reveal {
   will-change: transform, opacity;
@@ -279,19 +288,18 @@ body{
 	100% { transform: scale(1); opacity: 1; }
 }
 
-footer{
+footer {
   background-color: #333;
   color:white;
   padding: 20px;
   text-align: center;
 }
+
 .topnav {
   overflow: hidden;
   background-color: #333;
   display: flex;             /* establish flex container */
   align-items: center;       /* center ul container vertically */
-
-
 }
 
 #logo {
@@ -299,23 +307,21 @@ footer{
   padding: 14px 16px;
 }
 
-
 #topBtn {
-    display: none; /* Hidden by default */
-    width:50px;
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    left: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-
+  display: none; /* Hidden by default */
+  width:50px;
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  left: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
 }
 
-#reset{
-  background-color: red; /* Green */
+#reset {
+  background-color: red;
   border: none;
   color: black;
   padding: 10px;
@@ -328,26 +334,28 @@ footer{
   font-weight:bold;
 }
 
-#reset:hover{
+#reset:hover {
   background-color: darkred;
 }
 
-#clipboard{
+#clipboard {
   text-align: center;
-
 }
-#textArea{
+
+#textArea {
   width: 100%;
   font-size:14px;
   text-align: center;
   background-color: lightgray;
   border: 0;
 }
-#saveText{
+
+#saveText {
   margin-top:10px;
   font-size:14px;
 }
-#hide{
+
+#hide {
   background-color: #E0A458; /* Green */
   border: none;
   color: black;
@@ -362,6 +370,7 @@ footer{
   font-size:14px;
   font-weight:bold;
 }
+
 #close {
     float:right;
     display:inline-block;
