@@ -92,6 +92,8 @@ function startExport() {
   }
 }
 
+var pokemonNum = 377;
+
 function startImport(data) {
   try {
     var decoded = atob(data);
@@ -106,9 +108,9 @@ function startImport(data) {
       document.getElementById(num).style.backgroundColor = "#62D17A";
     })
     var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-    var width = Math.round(checkedBoxes.length/376*10000)/100;
+    var width = Math.round(checkedBoxes.length/pokemonNum*10000)/100;
     document.getElementById("myBar").style.width = width + '%';
-    document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / 376";
+    document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / " + pokemonNum;
     localStorage.setItem('checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
     alert("Import successful!");
     location.reload();
@@ -129,9 +131,9 @@ $(document).ready(function () {
         document.getElementById(num).style.backgroundColor = "#62D17A";
       })
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-      var width = Math.round(checkedBoxes.length / 376 * 10000) / 100;
+      var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
       document.getElementById("myBar").style.width = width + '%';
-      document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / 376";
+      document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / " + pokemonNum;
     }
     $("input:checkbox").change(function () {
       var arrCheckedCheckboxes = [];
@@ -146,9 +148,9 @@ $(document).ready(function () {
       else{
         document.getElementById(num).style.backgroundColor = "#D3D3D3";}
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-      var width = Math.round(checkedBoxes.length / 376 * 10000) / 100;
+      var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
       document.getElementById("myBar").style.width = width + '%';
-      document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / 376";
+      document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / " + pokemonNum;
       localStorage.setItem('checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
     });
 
@@ -160,7 +162,7 @@ var PokedexController = /** @class */ (function () {
     this.pokedexService = pokedexService;
     this.genOne = this.pokedexService.entries.slice(0,151);
     this.genTwo = this.pokedexService.entries.slice(151,250);
-    this.genThree = this.pokedexService.entries.slice(250,376);
+    this.genThree = this.pokedexService.entries.slice(250,pokemonNum);
   }
   PokedexController.prototype.print = function () {
     window.print();
@@ -308,6 +310,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "089-a", "name": "Muk" },
           { "id": "103-a", "name": "Exeggutor" },
           { "id": "105-a", "name": "Marowak" }];
+        this.spinda = [{ "id": "327-3", "name": "#3" },
+          { "id": "327-8", "name": "#8" }];
         this.unowns = [{ "id": "201-a", "name": "A" },
           { "id": "201-b", "name": "B" },
           { "id": "201-c", "name": "C" },
@@ -342,8 +346,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "366", "name": "Clamperl" },
           { "id": "367", "name": "Huntail" },
           { "id": "368", "name": "Gorebyss" },
-          { "id": "385", "name": "Jirachi" },
-          { "id": "386", "name": "Deoxys" }];
+          { "id": "385", "name": "Jirachi" }];
         this.entries = [{ "id": "001", "name": "Bulbasaur" },
           { "id": "002", "name": "Ivysaur" },
           { "id": "003", "name": "Venusaur" },
@@ -719,7 +722,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "381", "name": "Latios" },
           { "id": "382", "name": "Kyogre" },
           { "id": "383", "name": "Groudon" },
-          { "id": "384", "name": "Rayquaza" }];
+          { "id": "384", "name": "Rayquaza" },
+          { "id": "386", "name": "Deoxys" }];
     }
     return PokedexService;
 }());

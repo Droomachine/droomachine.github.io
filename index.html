@@ -40,6 +40,7 @@
     <a href="#shiny">Shinies</a>
     <a href="#special">Special</a>
     <a href="#alolan">Alolan</a>
+    <a href="#spinda">Spinda</a>
     <a href="#unowns">Unowns</a>
     <a href="#unavailable">Missing</a>
   </div>
@@ -98,6 +99,16 @@
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.alolan | filter:CDFilter">
         <label class="container" id="contalolan{{pokemon.id}}">
           <input type="checkbox" id="alolan{{pokemon.id}}">
+          <span class="checkmark"></span>
+          <div class="pokemon-name">{{pokemon.name}}</div>
+          <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+        </label>
+      </div>
+
+      <div class="gen" id="spinda">Spinda Forms</div>
+      <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.spinda | filter:CDFilter">
+        <label class="container" id="contspinda{{pokemon.id}}">
+          <input type="checkbox" id="spinda{{pokemon.id}}">
           <span class="checkmark"></span>
           <div class="pokemon-name">{{pokemon.name}}</div>
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
