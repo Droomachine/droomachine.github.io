@@ -99,15 +99,15 @@ function startImport(data) {
   try {
     var decoded = atob(data);
     Object.assign(localStorage,JSON.parse(decoded));
-    if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0 ) {
-      var luckyChecked = JSON.parse(localStorage.getItem("checked-checkboxes"));
+    if (localStorage.getItem('lucky-checked-checkboxes') && $.parseJSON(localStorage.getItem('lucky-checked-checkboxes')).length !== 0 ) {
+      var luckyChecked = JSON.parse(localStorage.getItem("lucky-checked-checkboxes"));
       // simple document ready code
       $(luckyChecked.toString()).prop('checked', true);
       luckyChecked.forEach(function(obj) {
         var num = "cont";
         var n = obj.substr(1);
         num += n;
-        document.getElementById(num).style.backgroundColor = "#62D17A";
+        document.getElementById(num).style.backgroundColor = "#FFDF7F";
       })
     }
     alert("Import successful!");
@@ -117,22 +117,18 @@ function startImport(data) {
   }
 }
 
-
 $(document).ready(function () {
-    if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0)
+    if (localStorage.getItem('lucky-checked-checkboxes') && $.parseJSON(localStorage.getItem('lucky-checked-checkboxes')).length !== 0)
     {
-      var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem('checked-checkboxes'));
+      var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem('lucky-checked-checkboxes'));
       $(arrCheckedCheckboxes.toString()).prop('checked', true);
       arrCheckedCheckboxes.forEach(function(obj) {
         var num = "cont";
         var n = obj.substr(1);
         num += n;
-        document.getElementById(num).style.backgroundColor = "#62D17A";
+        document.getElementById(num).style.backgroundColor = "#FFDF7F";
       })
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-      var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
-      document.getElementById("myBar").style.width = width + '%';
-      document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / " + pokemonNum;
     }
     $("input:checkbox").change(function () {
       var arrCheckedCheckboxes = [];
@@ -142,15 +138,12 @@ $(document).ready(function () {
       var num = "cont";
       num += $(this).attr('id');
       if(this.checked){
-        document.getElementById(num).style.backgroundColor = "#62D17A";
+        document.getElementById(num).style.backgroundColor = "#FFDF7F";
       }
       else{
         document.getElementById(num).style.backgroundColor = "#D3D3D3";}
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-      var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
-      document.getElementById("myBar").style.width = width + '%';
-      document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / " + pokemonNum;
-      localStorage.setItem('checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
+      localStorage.setItem('lucky-checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
     });
 
 });
@@ -159,9 +152,9 @@ $(document).ready(function () {
 var PokedexController = /** @class */ (function () {
   function PokedexController(pokedexService) {
     this.pokedexService = pokedexService;
-    this.genOne = this.pokedexService.entries.slice(0,151);
-    this.genTwo = this.pokedexService.entries.slice(151,250);
-    this.genThree = this.pokedexService.entries.slice(250,pokemonNum);
+    this.genOne = this.pokedexService.entries.slice(0,150);
+    this.genTwo = this.pokedexService.entries.slice(150,248);
+    this.genThree = this.pokedexService.entries.slice(248,pokemonNum);
   }
   PokedexController.prototype.print = function () {
     window.print();
@@ -343,15 +336,6 @@ var PokedexService = /** @class */ (function () {
           { "id": "201-x", "name": "X" },
           { "id": "201-y", "name": "Y" },
           { "id": "201-z", "name": "Z" }];
-        this.unavailable = [ { "id": "235", "name": "Smeargle" },
-          { "id": "290", "name": "Nincada" },
-          { "id": "291", "name": "Ninjask" },
-          { "id": "292", "name": "Shedinja" },
-          { "id": "352", "name": "Kecleon" },
-          { "id": "366", "name": "Clamperl" },
-          { "id": "367", "name": "Huntail" },
-          { "id": "368", "name": "Gorebyss" },
-          { "id": "385", "name": "Jirachi" }];
         this.entries = [{ "id": "001", "name": "Bulbasaur" },
           { "id": "002", "name": "Ivysaur" },
           { "id": "003", "name": "Venusaur" },
@@ -502,7 +486,6 @@ var PokedexService = /** @class */ (function () {
           { "id": "148", "name": "Dragonair" },
           { "id": "149", "name": "Dragonite" },
           { "id": "150", "name": "Mewtwo" },
-          { "id": "151", "name": "Mew" },
           { "id": "152", "name": "Chikorita" },
           { "id": "153", "name": "Bayleef" },
           { "id": "154", "name": "Meganium" },
@@ -601,7 +584,6 @@ var PokedexService = /** @class */ (function () {
           { "id": "248", "name": "Tyranitar" },
           { "id": "249", "name": "Lugia" },
           { "id": "250", "name": "Ho-Oh" },
-          { "id": "251", "name": "Celebi" },
           { "id": "252", "name": "Treecko" },
           { "id": "253", "name": "Grovyle" },
           { "id": "254", "name": "Sceptile" },
@@ -727,8 +709,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "381", "name": "Latios" },
           { "id": "382", "name": "Kyogre" },
           { "id": "383", "name": "Groudon" },
-          { "id": "384", "name": "Rayquaza" },
-          { "id": "386", "name": "Deoxys" }];
+          { "id": "384", "name": "Rayquaza" }];
     }
     return PokedexService;
 }());
