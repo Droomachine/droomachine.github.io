@@ -15,21 +15,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <div class="topnav">
-    <div class="topnav-left">
       <a href="/">
         <img id="logo" src="logo.png" alt="Pokemon GO Pokedex">
       </a>
-    </div>
-    <div class="topnav-right">
-      <a href="lucky.html" title="Lucky">✨Lucky</a>
-      <a id="export" href="#" title="Export">Export</a>
-      <a id="import"href="#" title="Import">Import</a>
-      <a href="support.html" title="Help">Help</a>
-    </div>
+
+      <a href="#" class="icon" id="ham" onclick="menu()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <div class="line-break" id="line-break"></div>
+      <div class="topnav-right" id="myLinks">
+        <a href="lucky.html" title="Lucky">✨Lucky</a>
+        <a href="100.html" title="100%">💯100%</a>
+        <a id="export" href="#" title="Export">Export</a>
+        <a id="import"href="#" title="Import">Import</a>
+        <a href="support.html" title="Help">Help</a>
+      </div>
   </div>
 
   <div id="myProgress"><div id="barLabel"></div>
@@ -147,7 +152,10 @@
   <script src="js/progressive-image.js"></script>
 
   <footer>
-    <p style="font-size:18px">Special thanks to Raighar and Andrew Archibald!</p>
+
+    <p style="font-size:18px">
+      Special thanks to Raighar and Andrew Archibald!
+    </p>
     <br>
     <button id="reset" onclick="confirmation()">Reset</button>
     <br><br>

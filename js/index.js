@@ -81,10 +81,22 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+function menu() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    document.getElementById("line-break").style.display = "none";
+  } else {
+    x.style.display = "block";
+    document.getElementById("line-break").style.display = "block";
+  }
+}
+
 
 function startExport() {
   if ((localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0) ||
-  (localStorage.getItem('lucky-checked-checkboxes') && $.parseJSON(localStorage.getItem('lucky-checked-checkboxes')).length !== 0 )) {
+  (localStorage.getItem('lucky-checked-checkboxes') && $.parseJSON(localStorage.getItem('lucky-checked-checkboxes')).length !== 0 ) ||
+  (localStorage.getItem('100-checked-checkboxes') && $.parseJSON(localStorage.getItem('100-checked-checkboxes')).length !== 0 )) {
     var encoded = btoa(JSON.stringify(localStorage));
     Clipboard.copy(encoded);
     alert("Copied to Clipboard!");
@@ -100,10 +112,10 @@ function startImport(data) {
     var decoded = atob(data);
     Object.assign(localStorage,JSON.parse(decoded));
     if (localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0 ) {
-      var luckyChecked = JSON.parse(localStorage.getItem("checked-checkboxes"));
+      var checked = JSON.parse(localStorage.getItem("checked-checkboxes"));
       // simple document ready code
-      $(luckyChecked.toString()).prop('checked', true);
-      luckyChecked.forEach(function(obj) {
+      $(checked.toString()).prop('checked', true);
+      checked.forEach(function(obj) {
         var num = "cont";
         var n = obj.substr(1);
         num += n;
@@ -200,6 +212,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "091", "name": "Cloister" },
           { "id": "096", "name": "Drowzee" },
           { "id": "097", "name": "Hypno" },
+          { "id": "098", "name": "Krabby" },
+          { "id": "099", "name": "Kingler" },
           { "id": "126", "name": "Magmar" },
           { "id": "129", "name": "Magicarp", },
           { "id": "130", "name": "Gyarados" },
@@ -218,6 +232,9 @@ var PokedexService = /** @class */ (function () {
           { "id": "147", "name": "Dratini" },
           { "id": "148", "name": "Dragonair" },
           { "id": "149", "name": "Dragonite" },
+          { "id": "152", "name": "Chikorita" },
+          { "id": "153", "name": "Bayleef" },
+          { "id": "154", "name": "Meganium" },
           { "id": "172", "name": "Pichu" },
           { "id": "172-party", "name": "Party Pichu" },
           { "id": "175", "name": "Togepi" },
@@ -278,6 +295,7 @@ var PokedexService = /** @class */ (function () {
         this.special = [{ "id": "172-santa", "name": "Santa Pichu" },
           { "id": "025-santa", "name": "Santa Pikachu" },
           { "id": "026-santa", "name": "Santa Raichu" },
+          { "id": "172-party", "name": "Party Pichu" },
           { "id": "025-party", "name": "Party Pikachu" },
           { "id": "026-party", "name": "Party Raichu" },
           { "id": "172-ash", "name": "Ash Pichu" },
@@ -315,7 +333,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "089-a", "name": "Muk" },
           { "id": "103-a", "name": "Exeggutor" },
           { "id": "105-a", "name": "Marowak" }];
-        this.spinda = [{ "id": "327-3", "name": "#3" },
+        this.spinda = [{ "id": "327", "name": "#1" },
+          { "id": "327-3", "name": "#3" },
           { "id": "327-8", "name": "#8" }];
         this.unowns = [{ "id": "201-a", "name": "A" },
           { "id": "201-b", "name": "B" },

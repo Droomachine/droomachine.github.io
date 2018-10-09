@@ -236,7 +236,15 @@ body {
   float: right;
 }
 
-@media only screen and (max-width: 600px) {
+.topnav #ham {
+  display: none;
+}
+
+.line-break {
+  width: 100%;
+    display: none;
+}
+@media only screen and (max-width: 650px) {
   .columns {
       width: 100px;
   }
@@ -272,10 +280,39 @@ body {
     font-size:24px;
   }
 
-  .topnav-right a {
-    font-size: 12px;
-    padding: 30px 4px;
+  .topnav #myLinks {
+    display: none;
   }
+
+  .topnav #ham {
+    display: block;
+    color: white;
+    padding: 24.5px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    align:right;
+  }
+
+  .topnav-right {
+    width:100%;
+    text-align:center;
+  }
+  .topnav-right a {
+    display:block;
+    padding: 15px;
+  }
+
+}
+
+@media only screen and (min-width: 651px) {
+  .topnav #myLinks {
+    display: block !important;
+  }
+
+  .line-break {
+      display: none !important;
+  }
+
 }
 
 .progressive img.reveal {
@@ -300,6 +337,7 @@ footer {
   background-color: #333;
   display: flex;             /* establish flex container */
   align-items: center;       /* center ul container vertically */
+  flex-wrap:wrap;
 }
 
 #logo {

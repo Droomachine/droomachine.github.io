@@ -10,7 +10,7 @@
     gtag('config', 'UA-123581449-1');
   </script>
   <meta charset="UTF-8">
-  <title>GoDex - Lucky List</title>
+  <title>GoDex - 100% List</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -49,7 +49,7 @@
   </div>
 
   <div class="wrapper" ng-cloak ng-app="app" ng-controller="PokedexController as pokedex">
-    <div class="gen" id="gen1">Lucky Gen 1</div>
+    <div class="gen" id="gen1">100% Gen 1</div>
       <div class="columns" ng-repeat="pokemon in pokedex.genOne | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="cont{{pokemon.id}}">
           <input type="checkbox" name="dex" id="{{pokemon.id}}">
@@ -59,7 +59,7 @@
         </label>
       </div>
 
-      <div class="gen" id="gen2">Lucky Gen 2</div>
+      <div class="gen" id="gen2">100% Gen 2</div>
       <div class="columns" ng-repeat="pokemon in pokedex.genTwo | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="cont{{pokemon.id}}">
           <input type="checkbox" name="dex"  id="{{pokemon.id}}">
@@ -69,7 +69,7 @@
         </label>
       </div>
 
-      <div class="gen" id="gen3">Lucky Gen 3</div>
+      <div class="gen" id="gen3">100% Gen 3</div>
       <div class="columns" ng-repeat="pokemon in pokedex.genThree | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="cont{{pokemon.id}}">
           <input type="checkbox" name="dex" id="{{pokemon.id}}">
@@ -79,7 +79,7 @@
         </label>
       </div>
 
-      <div class="gen" id="shiny">Lucky Shinies</div>
+      <div class="gen" id="shiny">100% Shinies</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.shinies | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="contshiny{{pokemon.id}}">
           <input type="checkbox" id="shiny{{pokemon.id}}">
@@ -88,7 +88,7 @@
         </label>
       </div>
 
-      <div class="gen" id="special">Lucky Special</div>
+      <div class="gen" id="special">100% Special</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.special | filter:CDFilter">
         <label class="container" id="contspecial{{pokemon.id}}">
           <input type="checkbox" id="special{{pokemon.id}}">
@@ -98,7 +98,7 @@
         </label>
       </div>
 
-      <div class="gen" id="alolan">Lucky Alolan</div>
+      <div class="gen" id="alolan">100% Alolan</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.alolan | filter:CDFilter">
         <label class="container" id="contalolan{{pokemon.id}}">
           <input type="checkbox" id="alolan{{pokemon.id}}">
@@ -108,7 +108,7 @@
         </label>
       </div>
 
-      <div class="gen" id="spinda">Lucky Spinda Forms</div>
+      <div class="gen" id="spinda">100% Spinda Forms</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.spinda | filter:CDFilter">
         <label class="container" id="contspinda{{pokemon.id}}">
           <input type="checkbox" id="spinda{{pokemon.id}}">
@@ -118,7 +118,7 @@
         </label>
       </div>
 
-      <div class="gen" id="unowns">Lucky Unowns</div>
+      <div class="gen" id="unowns">100% Unowns</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.unowns | filter:CDFilter">
         <label class="container" id="contunowns{{pokemon.id}}">
           <input type="checkbox" id="unowns{{pokemon.id}}">
@@ -135,7 +135,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="js/lucky.js"></script>
+  <script src="js/100.js"></script>
   <script src="js/progressive-image.js"></script>
 
   <footer>

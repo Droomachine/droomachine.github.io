@@ -110,15 +110,15 @@ function startImport(data) {
   try {
     var decoded = atob(data);
     Object.assign(localStorage,JSON.parse(decoded));
-    if (localStorage.getItem('lucky-checked-checkboxes') && $.parseJSON(localStorage.getItem('lucky-checked-checkboxes')).length !== 0 ) {
-      var checked = JSON.parse(localStorage.getItem("lucky-checked-checkboxes"));
+    if (localStorage.getItem('100-checked-checkboxes') && $.parseJSON(localStorage.getItem('100-checked-checkboxes')).length !== 0 ) {
+      var checked = JSON.parse(localStorage.getItem("100-checked-checkboxes"));
       // simple document ready code
       $(checked.toString()).prop('checked', true);
       checked.forEach(function(obj) {
         var num = "cont";
         var n = obj.substr(1);
         num += n;
-        document.getElementById(num).style.backgroundColor = "#FFDF7F";
+        document.getElementById(num).style.backgroundColor = "#F5A65B";
       })
     }
     alert("Import successful!");
@@ -129,15 +129,15 @@ function startImport(data) {
 }
 
 $(document).ready(function () {
-    if (localStorage.getItem('lucky-checked-checkboxes') && $.parseJSON(localStorage.getItem('lucky-checked-checkboxes')).length !== 0)
+    if (localStorage.getItem('100-checked-checkboxes') && $.parseJSON(localStorage.getItem('100-checked-checkboxes')).length !== 0)
     {
-      var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem('lucky-checked-checkboxes'));
+      var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem('100-checked-checkboxes'));
       $(arrCheckedCheckboxes.toString()).prop('checked', true);
       arrCheckedCheckboxes.forEach(function(obj) {
         var num = "cont";
         var n = obj.substr(1);
         num += n;
-        document.getElementById(num).style.backgroundColor = "#FFDF7F";
+        document.getElementById(num).style.backgroundColor = "#F5A65B";
       })
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
     }
@@ -149,12 +149,12 @@ $(document).ready(function () {
       var num = "cont";
       num += $(this).attr('id');
       if(this.checked){
-        document.getElementById(num).style.backgroundColor = "#FFDF7F";
+        document.getElementById(num).style.backgroundColor = "#F5A65B";
       }
       else{
         document.getElementById(num).style.backgroundColor = "#D3D3D3";}
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-      localStorage.setItem('lucky-checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
+      localStorage.setItem('100-checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
     });
 
 });
@@ -163,15 +163,16 @@ $(document).ready(function () {
 var PokedexController = /** @class */ (function () {
   function PokedexController(pokedexService) {
     this.pokedexService = pokedexService;
-    this.genOne = this.pokedexService.entries.slice(0,150);
-    this.genTwo = this.pokedexService.entries.slice(150,248);
-    this.genThree = this.pokedexService.entries.slice(248,pokemonNum);
+    this.genOne = this.pokedexService.entries.slice(0,151);
+    this.genTwo = this.pokedexService.entries.slice(151,250);
+    this.genThree = this.pokedexService.entries.slice(250,pokemonNum);
   }
   PokedexController.prototype.print = function () {
     window.print();
   };
   return PokedexController;
 }());
+
 
 var PokedexService = /** @class */ (function () {
     function PokedexService() {
@@ -354,6 +355,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "201-x", "name": "X" },
           { "id": "201-y", "name": "Y" },
           { "id": "201-z", "name": "Z" }];
+
         this.entries = [{ "id": "001", "name": "Bulbasaur" },
           { "id": "002", "name": "Ivysaur" },
           { "id": "003", "name": "Venusaur" },
@@ -504,6 +506,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "148", "name": "Dragonair" },
           { "id": "149", "name": "Dragonite" },
           { "id": "150", "name": "Mewtwo" },
+          { "id": "151", "name": "Mew" },
           { "id": "152", "name": "Chikorita" },
           { "id": "153", "name": "Bayleef" },
           { "id": "154", "name": "Meganium" },
@@ -602,6 +605,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "248", "name": "Tyranitar" },
           { "id": "249", "name": "Lugia" },
           { "id": "250", "name": "Ho-Oh" },
+          { "id": "251", "name": "Celebi" },
           { "id": "252", "name": "Treecko" },
           { "id": "253", "name": "Grovyle" },
           { "id": "254", "name": "Sceptile" },
@@ -727,7 +731,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "381", "name": "Latios" },
           { "id": "382", "name": "Kyogre" },
           { "id": "383", "name": "Groudon" },
-          { "id": "384", "name": "Rayquaza" }];
+          { "id": "384", "name": "Rayquaza" },
+          { "id": "386", "name": "Deoxys" }];
     }
     return PokedexService;
 }());
