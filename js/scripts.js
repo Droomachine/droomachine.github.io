@@ -1,4 +1,75 @@
+var page = window.location.pathname;
+var pokemonNum = 377;
+var item;
+var colour;
+$(document).ready(function () {
 
+  if (page == '/' || page == '/index.html') {
+    item = "checked-checkboxes";
+    colour = "#62D17A";
+  } else if (page == '/lucky.html') {
+    item = "lucky-checked-checkboxes";
+    colour = "#FFDF7F";
+  } else if (page == '/100.html') {
+    item = "100-checked-checkboxes";
+    colour = "#F5A65B";
+  }
+
+  if (localStorage.getItem('hideChecked') == null) {
+    localStorage.setItem('hideChecked', "false");
+  }
+
+  if (localStorage.getItem(item) && $.parseJSON(localStorage.getItem(item)).length !== 0) {
+    var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem(item));
+    $(arrCheckedCheckboxes.toString()).prop('checked', true);
+    arrCheckedCheckboxes.forEach(function(obj) {
+      var num = "cont";
+      var n = obj.substr(1);
+      num += n;
+      document.getElementById(num).style.backgroundColor = colour;
+      if (localStorage.getItem('hideChecked') == "false"){
+        document.getElementById(num).parentElement.style.display = 'inline-grid';
+      } else {
+        $("#toggleChecked").html("Show");
+        document.getElementById(num).parentElement.style.display = 'none';
+      }
+    })
+    if (page == '/' || page == '/index.html') {
+      var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
+      var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
+      document.getElementById("myBar").style.width = width + '%';
+      document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / " + pokemonNum;
+    }
+
+    $( ".section" ).each(function( index, obj ) {
+      if($(obj).children(':visible').length < 2) {
+        $(obj).children( ".sectionLabel" ).css( "display", "none" );
+      }
+    });
+  }
+
+  $("input:checkbox").change(function () {
+    var arrCheckedCheckboxes = [];
+    $.each($("input:checkbox:checked"), function () {
+        arrCheckedCheckboxes.push("#" + $(this).attr('id'));
+    });
+    var num = "cont";
+    num += $(this).attr('id');
+    if (this.checked) {
+      document.getElementById(num).style.backgroundColor = colour;
+    }
+    else {
+      document.getElementById(num).style.backgroundColor = "#D3D3D3";
+    }
+    if (page == '/' || page == '/index.html') {
+      var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
+      var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
+      document.getElementById("myBar").style.width = width + '%';
+      document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / " + pokemonNum;
+    }
+    localStorage.setItem(item, JSON.stringify(arrCheckedCheckboxes));
+  });
+});
 $("#export").on("click", startExport);
 $("#import").on("click", function() {
   if (screen.width<"601"){
@@ -9,6 +80,7 @@ $("#import").on("click", function() {
   }
  });
 $("#toString").on("click", toString);
+$("#toggleChecked").on("click", toggleChecked);
 $(window).on("paste", function(e) {
   startImport(e.originalEvent.clipboardData.getData("text/plain"));
 });
@@ -92,8 +164,37 @@ function menu() {
   }
 }
 
+function toggleChecked(){
+  var x = $("input:checkbox:checked").parent().parent();
+  if(x.css("display") == "inline-grid") {
+    x.css("display", "none");
+    localStorage.setItem('hideChecked', true);
+    hideLabels();
+    $("#toggleChecked").html("Show");
+  } else {
+    x.css("display", "inline-grid");
+    localStorage.setItem('hideChecked', false);
+    showLabels();
+    $("#toggleChecked").html("Hide");
+  }
+}
+
+function hideLabels(){
+  $( ".section" ).each(function( index, obj ) {
+    if($(obj).children(':visible').length < 2) {
+      $(obj).children( ".sectionLabel" ).css( "display", "none" );
+    }
+  });
+}
+
+function showLabels() {
+  $( ".section" ).each(function( index, obj ) {
+    $(obj).children( ".sectionLabel" ).css( "display", "block" );
+  });
+}
+
 function startExport() {
-  if ((localStorage.getItem('checked-checkboxes') && $.parseJSON(localStorage.getItem('checked-checkboxes')).length !== 0) ||
+  if ((localStorage.getItem(item) && $.parseJSON(localStorage.getItem(item)).length !== 0) ||
   (localStorage.getItem('lucky-checked-checkboxes') && $.parseJSON(localStorage.getItem('lucky-checked-checkboxes')).length !== 0 ) ||
   (localStorage.getItem('100-checked-checkboxes') && $.parseJSON(localStorage.getItem('100-checked-checkboxes')).length !== 0 )) {
     var encoded = btoa(JSON.stringify(localStorage));
@@ -104,21 +205,17 @@ function startExport() {
   }
 }
 
-var pokemonNum = 377;
-
 function startImport(data) {
   try {
-    var decoded = atob(data);
-    Object.assign(localStorage,JSON.parse(decoded));
-    if (localStorage.getItem('100-checked-checkboxes') && $.parseJSON(localStorage.getItem('100-checked-checkboxes')).length !== 0 ) {
-      var checked = JSON.parse(localStorage.getItem("100-checked-checkboxes"));
-      // simple document ready code
+    Object.assign(localStorage,JSON.parse(atob(data)));
+    if (localStorage.getItem(item) && $.parseJSON(localStorage.getItem(item)).length !== 0 ) {
+      var checked = JSON.parse(localStorage.getItem(item));
       $(checked.toString()).prop('checked', true);
       checked.forEach(function(obj) {
         var num = "cont";
         var n = obj.substr(1);
         num += n;
-        document.getElementById(num).style.backgroundColor = "#F5A65B";
+        document.getElementById(num).style.backgroundColor = colour;
       })
     }
     alert("Import successful!");
@@ -128,51 +225,15 @@ function startImport(data) {
   }
 }
 
-$(document).ready(function () {
-    if (localStorage.getItem('100-checked-checkboxes') && $.parseJSON(localStorage.getItem('100-checked-checkboxes')).length !== 0)
-    {
-      var arrCheckedCheckboxes = $.parseJSON(localStorage.getItem('100-checked-checkboxes'));
-      $(arrCheckedCheckboxes.toString()).prop('checked', true);
-      arrCheckedCheckboxes.forEach(function(obj) {
-        var num = "cont";
-        var n = obj.substr(1);
-        num += n;
-        document.getElementById(num).style.backgroundColor = "#F5A65B";
-      })
-      var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-    }
-    $("input:checkbox").change(function () {
-      var arrCheckedCheckboxes = [];
-      $.each($("input:checkbox:checked"), function () {
-          arrCheckedCheckboxes.push("#" + $(this).attr('id'));
-      });
-      var num = "cont";
-      num += $(this).attr('id');
-      if(this.checked){
-        document.getElementById(num).style.backgroundColor = "#F5A65B";
-      }
-      else{
-        document.getElementById(num).style.backgroundColor = "#D3D3D3";}
-      var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
-      localStorage.setItem('100-checked-checkboxes', JSON.stringify(arrCheckedCheckboxes));
-    });
-
-});
-
-
 var PokedexController = /** @class */ (function () {
   function PokedexController(pokedexService) {
     this.pokedexService = pokedexService;
-    this.genOne = this.pokedexService.entries.slice(0,151);
-    this.genTwo = this.pokedexService.entries.slice(151,250);
-    this.genThree = this.pokedexService.entries.slice(250,pokemonNum);
   }
   PokedexController.prototype.print = function () {
     window.print();
   };
   return PokedexController;
 }());
-
 
 var PokedexService = /** @class */ (function () {
     function PokedexService() {
@@ -355,8 +416,16 @@ var PokedexService = /** @class */ (function () {
           { "id": "201-x", "name": "X" },
           { "id": "201-y", "name": "Y" },
           { "id": "201-z", "name": "Z" }];
-
-        this.entries = [{ "id": "001", "name": "Bulbasaur" },
+        this.unavailable = [ { "id": "235", "name": "Smeargle" },
+          { "id": "290", "name": "Nincada" },
+          { "id": "291", "name": "Ninjask" },
+          { "id": "292", "name": "Shedinja" },
+          { "id": "352", "name": "Kecleon" },
+          { "id": "366", "name": "Clamperl" },
+          { "id": "367", "name": "Huntail" },
+          { "id": "368", "name": "Gorebyss" },
+          { "id": "385", "name": "Jirachi" }];
+        this.gen1 = [{ "id": "001", "name": "Bulbasaur" },
           { "id": "002", "name": "Ivysaur" },
           { "id": "003", "name": "Venusaur" },
           { "id": "004", "name": "Charmander" },
@@ -506,8 +575,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "148", "name": "Dragonair" },
           { "id": "149", "name": "Dragonite" },
           { "id": "150", "name": "Mewtwo" },
-          { "id": "151", "name": "Mew" },
-          { "id": "152", "name": "Chikorita" },
+          { "id": "151", "name": "Mew" }];
+        this.gen2 = [{ "id": "152", "name": "Chikorita" },
           { "id": "153", "name": "Bayleef" },
           { "id": "154", "name": "Meganium" },
           { "id": "155", "name": "Cyndaquil" },
@@ -605,8 +674,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "248", "name": "Tyranitar" },
           { "id": "249", "name": "Lugia" },
           { "id": "250", "name": "Ho-Oh" },
-          { "id": "251", "name": "Celebi" },
-          { "id": "252", "name": "Treecko" },
+          { "id": "251", "name": "Celebi" }];
+        this.gen3 = [{ "id": "252", "name": "Treecko" },
           { "id": "253", "name": "Grovyle" },
           { "id": "254", "name": "Sceptile" },
           { "id": "255", "name": "Torchic" },

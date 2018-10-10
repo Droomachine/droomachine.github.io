@@ -20,21 +20,23 @@
 
 <body>
   <div class="topnav">
-      <a href="/">
-        <img id="logo" src="logo.png" alt="Pokemon GO Pokedex">
-      </a>
+    <a href="/">
+      <img id="logo" src="logo.png" alt="Pokemon GO Pokedex">
+    </a>
 
-      <a href="#" class="icon" id="ham" onclick="menu()">
-        <i class="fa fa-bars"></i>
-      </a>
-      <div class="line-break" id="line-break"></div>
-      <div class="topnav-right" id="myLinks">
-        <a href="lucky.html" title="Lucky">✨Lucky</a>
-        <a href="100.html" title="100%">💯100%</a>
-        <a id="export" href="#" title="Export">Export</a>
-        <a id="import"href="#" title="Import">Import</a>
-        <a href="support.html" title="Help">Help</a>
-      </div>
+    <a href="#" class="icon" id="ham" onclick="menu()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div class="line-break" id="line-break"></div>
+    <div class="topnav-right" id="myLinks">
+      <a id="toggleChecked" href="#" title="toggleChecked">Hide</a>
+      <a href="lucky.html" title="Lucky">✨Lucky</a>
+      <a href="100.html" title="100%">💯100%</a>
+      <a id="export" href="#" title="Export">Export</a>
+      <a id="import"href="#" title="Import">Import</a>
+      <a href="support.html" title="Help">Help</a>
+      <a href="https://ko-fi.com/dunajevs">Buy me a coffee :)</a>
+    </div>
   </div>
 
   <div id="myProgress"><div id="barLabel"></div>
@@ -54,8 +56,9 @@
   </div>
 
   <div class="wrapper" ng-cloak ng-app="app" ng-controller="PokedexController as pokedex">
-    <div class="gen" id="gen1">Gen 1</div>
-      <div class="columns" ng-repeat="pokemon in pokedex.genOne | orderBy:['id']:false | filter:CDFilter">
+    <div class="section">
+      <div class="sectionLabel" id="gen1">Gen 1</div>
+      <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.gen1 | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="cont{{pokemon.id}}">
           <input type="checkbox" name="dex" id="{{pokemon.id}}">
           <span class="checkmark"></span>
@@ -63,9 +66,11 @@
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
       </div>
+    </div>
 
-      <div class="gen" id="gen2">Gen 2</div>
-      <div class="columns" ng-repeat="pokemon in pokedex.genTwo | orderBy:['id']:false | filter:CDFilter">
+    <div class="section">
+      <div class="sectionLabel" id="gen2">Gen 2</div>
+      <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.gen2 | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="cont{{pokemon.id}}">
           <input type="checkbox" name="dex"  id="{{pokemon.id}}">
           <span class="checkmark"></span>
@@ -73,9 +78,11 @@
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
       </div>
+    </div>
 
-      <div class="gen" id="gen3">Gen 3</div>
-      <div class="columns" ng-repeat="pokemon in pokedex.genThree | orderBy:['id']:false | filter:CDFilter">
+    <div class="section">
+      <div class="sectionLabel" id="gen3">Gen 3</div>
+      <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.gen3 | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="cont{{pokemon.id}}">
           <input type="checkbox" name="dex" id="{{pokemon.id}}">
           <span class="checkmark"></span>
@@ -83,8 +90,10 @@
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
       </div>
+    </div>
 
-      <div class="gen" id="shiny">Shinies</div>
+    <div class="section">
+      <div class="sectionLabel" id="shiny">Shinies</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.shinies | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="contshiny{{pokemon.id}}">
           <input type="checkbox" id="shiny{{pokemon.id}}">
@@ -92,8 +101,10 @@
           <div class="pokemon-name">{{pokemon.name}}</div><figure data-href="https://www.serebii.net/pokemongo/pokemon/shiny/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
       </div>
+    </div>
 
-      <div class="gen" id="special">Special</div>
+    <div class="section">
+      <div class="sectionLabel" id="special">Special</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.special | filter:CDFilter">
         <label class="container" id="contspecial{{pokemon.id}}">
           <input type="checkbox" id="special{{pokemon.id}}">
@@ -102,8 +113,10 @@
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
       </div>
+    </div>
 
-      <div class="gen" id="alolan">Alolan</div>
+    <div class="section">
+      <div class="sectionLabel" id="alolan">Alolan</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.alolan | filter:CDFilter">
         <label class="container" id="contalolan{{pokemon.id}}">
           <input type="checkbox" id="alolan{{pokemon.id}}">
@@ -112,8 +125,10 @@
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
       </div>
+    </div>
 
-      <div class="gen" id="spinda">Spinda Forms</div>
+    <div class="section">
+      <div class="sectionLabel" id="spinda">Spinda Forms</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.spinda | filter:CDFilter">
         <label class="container" id="contspinda{{pokemon.id}}">
           <input type="checkbox" id="spinda{{pokemon.id}}">
@@ -122,8 +137,10 @@
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
       </div>
+    </div>
 
-      <div class="gen" id="unowns">Unowns</div>
+    <div class="section">
+      <div class="sectionLabel" id="unowns">Unowns</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.unowns | filter:CDFilter">
         <label class="container" id="contunowns{{pokemon.id}}">
           <input type="checkbox" id="unowns{{pokemon.id}}">
@@ -132,14 +149,17 @@
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
       </div>
+    </div>
 
-      <div class="gen" id="unavailable">Missing</div>
+    <div class="section">
+      <div class="sectionLabel" id="unavailable">Missing</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.unavailable | filter:CDFilter">
         <label class="container">
           <div class="pokemon-name">{{pokemon.name}}</div>
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
       </div>
+    </div>
 
     <br></br>
     <input onclick="topFunction()" id="topBtn" title="Go to top"type="image" src="top.png" />
@@ -148,7 +168,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/scripts.js"></script>
   <script src="js/progressive-image.js"></script>
 
   <footer>

@@ -2,116 +2,63 @@
 <html lang="en" >
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123581449-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-123581449-1');
-</script>
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123581449-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-123581449-1');
+  </script>
   <meta charset="UTF-8">
-  <title>GoDex</title>
+  <title>GoDex Support</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<style>
-
-
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-.supportForm {
-  width:300px;
-  margin: auto;
-  margin-bottom:100px;
-  text-align:center;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-label, input, textarea{
-  font-size:14px;
-}
-
-#contactHead{
-  font-size:24px;
-  text-align: center;
-}
-</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-
   <div class="topnav">
-  <a href="/">
-    <img id="logo" src="logo.png" alt="Pokemon GO Pokedex">
-  </a>
+    <a href="/">
+      <img id="logo" src="logo.png" alt="Pokemon GO Pokedex">
+    </a>
 
-</div>
+    <a href="#" class="icon" id="ham" onclick="menu()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div class="line-break" id="line-break"></div>
+    <div class="topnav-right" id="myLinks">
+      <a href="lucky.html" title="Lucky">✨Lucky</a>
+      <a href="100.html" title="100%">💯100%</a>
+      <a href="support.html" title="Help">Help</a>
+      <a href="https://ko-fi.com/dunajevs">Buy me a coffee :)</a>
+    </div>
+  </div>
 
+  <br><br>
+  <h3 id="contactHead">Contact Form</h3>
+  <div class="supportForm">
+    <form id="supForm" action="https://formspree.io/godexsup@gmail.com" method="POST">
+      <label for="fname">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name..">
 
-
-
-<div id="myProgress"><div id="barLabel"></div>
-  <div id="myBar"></div>
-</div>
-
-<div hidden id = "clipboard">
-    <form name="yourform" id="form">
-      <div id="saveText">Save this code! (Make sure to select it all, it can be huge!)</div>
-    <textarea id="textArea" name="yourtextarea"></textarea>
-      <a id="hide" onclick="hideForm()" title="Hide">Hide</a>
-</form>
-</div>
-
-
-<h3 id="contactHead">Contact Form</h3>
-
-<div class="supportForm">
-  <form id="supForm" action="https://formspree.io/godexsup@gmail.com" method="POST">
-    <label for="fname">Name</label>
-    <input type="text" id="name" name="name" placeholder="Your name..">
-
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Your email..">
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Your email..">
 
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write a suggestion or describe a problem.." style="height:200px"></textarea>
+      <label for="subject">Message</label>
+      <textarea id="subject" name="subject" placeholder="Write a suggestion or describe a problem.." style="height:200px"></textarea>
 
-    <input type="submit" value="Submit">
-  </form>
-</div>
-<br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 
-<footer>
-  <p style="font-size:18px">Special thanks to Raighar and Andrew Archibald!</p>
-
-</footer>
+  <footer>
+    <p style="font-size:18px">
+      Special thanks to Raighar and Andrew Archibald!
+    </p>
+    <br>
+  </footer>
 </body>
-
 </html>

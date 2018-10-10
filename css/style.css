@@ -194,7 +194,7 @@ body {
   background-color: gray;
 }
 
-.gen {
+.sectionLabel {
   margin-top:10px;
   margin-bottom: 10px;
   text-align:center;
@@ -244,7 +244,7 @@ body {
   width: 100%;
     display: none;
 }
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 919px) {
   .columns {
       width: 100px;
   }
@@ -276,7 +276,7 @@ body {
     font-size: 14px;
   }
 
-  .gen {
+  .sectionLabel {
     font-size:24px;
   }
 
@@ -304,7 +304,7 @@ body {
 
 }
 
-@media only screen and (min-width: 651px) {
+@media only screen and (min-width: 920px) {
   .topnav #myLinks {
     display: block !important;
   }
@@ -422,4 +422,46 @@ footer {
     padding:2px 5px;
     background:#ccc;
     color:#fff;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.supportForm {
+  width:300px;
+  margin: auto;
+  margin-bottom:100px;
+  text-align:center;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+label, input, textarea{
+  font-size:14px;
+}
+
+#contactHead{
+  font-size:24px;
+  text-align: center;
 }
