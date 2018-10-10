@@ -4,7 +4,7 @@ var item;
 var colour;
 $(document).ready(function () {
 
-  if (page == '/' || page == '/index.html') {
+  if (page == '/' || page == '/index.html' || page == '/index') {
     item = "checked-checkboxes";
     colour = "#62D17A";
   } else if (page == '/lucky.html') {
@@ -34,7 +34,7 @@ $(document).ready(function () {
         document.getElementById(num).parentElement.style.display = 'none';
       }
     })
-    if (page == '/' || page == '/index.html') {
+    if (page == '/' || page == '/index.html' || page == '/index') {
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
       var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
       document.getElementById("myBar").style.width = width + '%';
@@ -61,7 +61,7 @@ $(document).ready(function () {
     else {
       document.getElementById(num).style.backgroundColor = "#D3D3D3";
     }
-    if (page == '/' || page == '/index.html') {
+    if (page == '/' || page == '/index.html' || page == '/index') {
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
       var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
       document.getElementById("myBar").style.width = width + '%';
