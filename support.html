@@ -8,6 +8,16 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-123581449-1');
+    function menu() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+        document.getElementById("line-break").style.display = "none";
+      } else {
+        x.style.display = "block";
+        document.getElementById("line-break").style.display = "block";
+      }
+    }
   </script>
   <meta charset="UTF-8">
   <title>GoDex Support</title>
