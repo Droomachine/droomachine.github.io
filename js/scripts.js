@@ -7,10 +7,10 @@ $(document).ready(function () {
   if (page == '/' || page == '/index.html' || page == '/index') {
     item = "checked-checkboxes";
     colour = "#62D17A";
-  } else if (page == '/lucky.html') {
+  } else if (page == '/lucky.html' || page == '/lucky') {
     item = "lucky-checked-checkboxes";
     colour = "#FFDF7F";
-  } else if (page == '/100.html') {
+  } else if (page == '/100.html'|| page == '/100') {
     item = "100-checked-checkboxes";
     colour = "#F5A65B";
   }
