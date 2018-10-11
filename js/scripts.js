@@ -415,7 +415,9 @@ var PokedexService = /** @class */ (function () {
           { "id": "201-w", "name": "W" },
           { "id": "201-x", "name": "X" },
           { "id": "201-y", "name": "Y" },
-          { "id": "201-z", "name": "Z" }];
+          { "id": "201-z", "name": "Z" },
+          { "id": "201-!", "name": "!" },
+          { "id": "201-qm", "name": "?" }];
         this.unavailable = [ { "id": "235", "name": "Smeargle" },
           { "id": "290", "name": "Nincada" },
           { "id": "291", "name": "Ninjask" },
