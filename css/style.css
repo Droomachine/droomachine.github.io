@@ -244,6 +244,44 @@ body {
   width: 100%;
     display: none;
 }
+
+h1 {
+  font-size:24px;
+}
+
+h2 {
+  font-size:20px;
+  padding-top:20px;
+  text-align: justify;
+}
+
+.supportCont p {
+  font-size:18px;
+  padding-left: 30px;
+  text-align: justify;
+}
+
+.supportCont p a {
+  font-size:18px;
+  color: #1DA1F2;
+}
+
+.supportContp  a:visited {
+    color: darkblue;
+}
+
+.supportCont p a:hover {
+    color: green;
+}
+
+.supportCont p a:active {
+    color: blue;
+}
+
+label, input, textarea{
+  font-size:18px;
+}
+
 @media only screen and (max-width: 919px) {
   .columns {
       width: 100px;
@@ -302,6 +340,25 @@ body {
     padding: 15px;
   }
 
+  h1 {
+    font-size:22px;
+  }
+
+  h2 {
+    font-size:18px;
+  }
+
+  .supportCont p {
+    font-size:16px;
+  }
+
+  .supportCont p a {
+    font-size:16px;
+  }
+
+  label, input, textarea{
+    font-size:16px;
+  }
 }
 
 @media only screen and (min-width: 920px) {
@@ -448,20 +505,18 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-.supportForm {
-  width:300px;
+.supportCont {
+  max-width:70vh;
   margin: auto;
-  margin-bottom:100px;
+  margin-bottom:0px;
   text-align:center;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-label, input, textarea{
-  font-size:14px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  margin-top: 0px;
+  padding: 20px;
 }
 
-#contactHead{
+#contactHead {
   font-size:24px;
   text-align: center;
 }

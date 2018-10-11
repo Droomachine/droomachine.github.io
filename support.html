@@ -18,6 +18,13 @@
         document.getElementById("line-break").style.display = "block";
       }
     }
+    function confirmation() {
+      if (confirm("Are you sure you want to reset?")) {
+        localStorage.clear();
+         window.location.href ="/"
+         window.scrollTo(0,0);
+      }
+    }
   </script>
   <meta charset="UTF-8">
   <title>GoDex Support</title>
@@ -46,24 +53,36 @@
     </div>
   </div>
 
-  <br><br>
-  <h3 id="contactHead">Contact Form</h3>
-  <div class="supportForm">
-    <form id="supForm" action="https://formspree.io/godexsup@gmail.com" method="POST">
-      <label for="fname">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your name..">
+  <div class="supportCont">
+      <h1 id="faq">Frequently Asked Questions</h1>
+        <h2>What's a GoDex?</h2>
+        <p>GoDex is an online Pokedex checklist for Pokemon GO. Use it to keep track of your Pokemon collection outside of the game.</p>
+        <h2>How does it work?</h2>
+        <p>Just tick off all the Pokemon you have so that you can see all the ones you still need.</p>
+        <h2>What does the "Hide" button do?</h2>
+        <p>It hides the Pokemon that you ticked off so that you only see the ones you still need.</p>
+        <h2>How can I save my selections?</h2>
+        <p>All your changes are automatically saved in your browser!</p>
+        <h2>Can I transfer my collection to another device?</h2>
+        <p>Yes, at the moment you have to press the "Export" button which will copy your unique code, send this code to another device and press the "Import" button to paste it in.</p>
+        <h2>This website is amazing how can I express my appreciation? :D</h2>
+        <p>You can send me a few nice words down below or tweet <a href="https://twitter.com/GoDexOnline">@GoDexOnline</a>, alternatively, if you're feeling extra generous, you can <a href="https://ko-fi.com/dunajevs">buy me a coffee!</a> I don't want to run ads on the website so I would really appreciate it.</p>
+        <h2>What if my question is not answered here or I want to suggest something or report a bug?</h2>
+        <p>Then please send me an email down below :)</p>
+      <form id="supForm" action="https://formspree.io/godexsup@gmail.com" method="POST">
+        <label for="fname">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name..">
 
-      <label for="email">Email</label>
-      <input type="text" id="email" name="email" placeholder="Your email..">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your email..">
 
 
-      <label for="subject">Message</label>
-      <textarea id="subject" name="subject" placeholder="Write a suggestion or describe a problem.." style="height:200px"></textarea>
+        <label for="subject">Message</label>
+        <textarea id="subject" name="subject" placeholder="Write a suggestion or describe a problem.." style="height:200px"></textarea>
 
-      <input type="submit" value="Submit">
-    </form>
+        <input type="submit" value="Submit">
+      </form>
   </div>
-
 
   <footer>
     <p style="font-size:18px">
