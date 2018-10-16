@@ -306,6 +306,7 @@ label, input, textarea{
 
   .progressive img {
     height: 70px;
+    max-width:100%;
   }
 
   .jump a {

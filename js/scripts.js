@@ -807,6 +807,26 @@ var PokedexService = /** @class */ (function () {
           { "id": "383", "name": "Groudon" },
           { "id": "384", "name": "Rayquaza" },
           { "id": "386", "name": "Deoxys" }];
+        this.gen4 = [{ "id": "387", "name": "Turtwig" },
+          { "id": "388", "name": "Grotle" },
+          { "id": "389", "name": "Torterra" },
+          { "id": "390", "name": "Chimchar" },
+          { "id": "391", "name": "Monferno" },
+          { "id": "392", "name": "Infernape" },
+          { "id": "393", "name": "Piplup" },
+          { "id": "394", "name": "Prinplup" },
+          { "id": "395", "name": "Empoleon" },
+          { "id": "396", "name": "Starly" },
+          { "id": "397", "name": "Staravia" },
+          { "id": "398", "name": "Staraptor" },
+          { "id": "399", "name": "Bidoof" },
+          { "id": "400", "name": "Bibarel" },
+          { "id": "401", "name": "Kricketot" },
+          { "id": "402", "name": "Kricketune" },
+          { "id": "427", "name": "Buneary" },
+          { "id": "428", "name": "Lopunny" },
+          { "id": "441", "name": "Chatot" },
+          { "id": "455", "name": "Carnivine" }];
     }
     return PokedexService;
 }());
