@@ -823,9 +823,14 @@ var PokedexService = /** @class */ (function () {
           { "id": "400", "name": "Bibarel" },
           { "id": "401", "name": "Kricketot" },
           { "id": "402", "name": "Kricketune" },
+          { "id": "404", "name": "Luxio" },
+          { "id": "405", "name": "Luxray" },
+          { "id": "417", "name": "Pachirisu" },
           { "id": "427", "name": "Buneary" },
           { "id": "428", "name": "Lopunny" },
           { "id": "441", "name": "Chatot" },
+          { "id": "447", "name": "Riolu" },
+          { "id": "448", "name": "Lucario" },
           { "id": "455", "name": "Carnivine" }];
     }
     return PokedexService;
