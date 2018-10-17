@@ -348,7 +348,10 @@ var PokedexService = /** @class */ (function () {
           { "id": "361", "name": "Snorunt" },
           { "id": "362", "name": "Glaile" },
           { "id": "370", "name": "Luvdisk" },
-          { "id": "382", "name": "Kyogre" }];
+          { "id": "382", "name": "Kyogre" }
+          { "id": "403", "name": "Shinx" },
+          { "id": "404", "name": "Luxio" },
+          { "id": "405", "name": "Luxray" }];
         this.special = [{ "id": "172-santa", "name": "Santa Pichu" },
           { "id": "025-santa", "name": "Santa Pikachu" },
           { "id": "026-santa", "name": "Santa Raichu" },
@@ -823,6 +826,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "400", "name": "Bibarel" },
           { "id": "401", "name": "Kricketot" },
           { "id": "402", "name": "Kricketune" },
+          { "id": "403", "name": "Shinx" },
           { "id": "404", "name": "Luxio" },
           { "id": "405", "name": "Luxray" },
           { "id": "417", "name": "Pachirisu" },
