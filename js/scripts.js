@@ -348,7 +348,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "361", "name": "Snorunt" },
           { "id": "362", "name": "Glaile" },
           { "id": "370", "name": "Luvdisk" },
-          { "id": "382", "name": "Kyogre" }
+          { "id": "382", "name": "Kyogre" },
           { "id": "403", "name": "Shinx" },
           { "id": "404", "name": "Luxio" },
           { "id": "405", "name": "Luxray" }];
