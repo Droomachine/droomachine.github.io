@@ -255,6 +255,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "026-party", "name": "Party Raichu" },
           { "id": "025-fragment", "name": "Fragment Pikachu" },
           { "id": "026-fragment", "name": "Fragment Raichu" },
+          { "id": "025-halloween", "name": "Witch Pikachu" },
+          { "id": "026-halloween", "name": "Witch Raichu" },
           { "id": "029", "name": "Nidoran" },
           { "id": "030", "name": "Nidorina" },
           { "id": "031", "name": "Nidoqueen" },
@@ -354,7 +356,9 @@ var PokedexService = /** @class */ (function () {
           { "id": "382", "name": "Kyogre" },
           { "id": "403", "name": "Shinx" },
           { "id": "404", "name": "Luxio" },
-          { "id": "405", "name": "Luxray" }];
+          { "id": "405", "name": "Luxray" },
+          { "id": "425", "name": "Drifloon" },
+          { "id": "426", "name": "Drifblim" }];
         this.special = [{ "id": "172-santa", "name": "Santa Pichu" },
           { "id": "025-santa", "name": "Santa Pikachu" },
           { "id": "026-santa", "name": "Santa Raichu" },
@@ -833,12 +837,18 @@ var PokedexService = /** @class */ (function () {
           { "id": "404", "name": "Luxio" },
           { "id": "405", "name": "Luxray" },
           { "id": "417", "name": "Pachirisu" },
+          { "id": "425", "name": "Drifloon" },
+          { "id": "426", "name": "Drifblim" },
           { "id": "427", "name": "Buneary" },
           { "id": "428", "name": "Lopunny" },
+          { "id": "434", "name": "Stunky" },
+          { "id": "435", "name": "Skuntank" },
           { "id": "441", "name": "Chatot" },
+          { "id": "442", "name": "Spiritomb" },
           { "id": "447", "name": "Riolu" },
           { "id": "448", "name": "Lucario" },
-          { "id": "455", "name": "Carnivine" }];
+          { "id": "455", "name": "Carnivine" },
+          { "id": "487", "name": "Giratina" }];
     }
     return PokedexService;
 }());
