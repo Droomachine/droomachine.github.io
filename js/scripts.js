@@ -296,6 +296,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "154", "name": "Meganium" },
           { "id": "172", "name": "Pichu" },
           { "id": "172-party", "name": "Party Pichu" },
+          { "id": "172-halloween", "name": "Witch Pichu" },
           { "id": "175", "name": "Togepi" },
           { "id": "176", "name": "Togetic" },
           { "id": "177", "name": "Natu" },
