@@ -274,6 +274,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "098", "name": "Krabby" },
           { "id": "099", "name": "Kingler" },
           { "id": "126", "name": "Magmar" },
+          { "id": "127", "name": "Pinsir" },
           { "id": "129", "name": "Magicarp", },
           { "id": "130", "name": "Gyarados" },
           { "id": "133", "name": "Eevee" },
