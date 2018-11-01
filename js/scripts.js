@@ -249,6 +249,9 @@ var PokedexService = /** @class */ (function () {
           { "id": "007-sunglasses", "name": "Summer Squirtle" },
           { "id": "008-sunglasses", "name": "Summer Wortortle" },
           { "id": "009-sunglasses", "name": "Summer Blastoise" },
+          { "id": "010", "name": "Caterpie" },
+          { "id": "011", "name": "Metapod" },
+          { "id": "012", "name": "Butterfree" },
           { "id": "025", "name": "Pikachu" },
           { "id": "026", "name": "Raichu" },
           { "id": "025-party", "name": "Party Pikachu" },
@@ -404,6 +407,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "105-a", "name": "Marowak" }];
         this.spinda = [{ "id": "327", "name": "#1" },
           { "id": "327-3", "name": "#3" },
+          { "id": "327-7", "name": "#7" },
           { "id": "327-8", "name": "#8" }];
         this.unowns = [{ "id": "201-a", "name": "A" },
           { "id": "201-b", "name": "B" },
@@ -434,9 +438,6 @@ var PokedexService = /** @class */ (function () {
           { "id": "201-!", "name": "!" },
           { "id": "201-qm", "name": "?" }];
         this.unavailable = [ { "id": "235", "name": "Smeargle" },
-          { "id": "290", "name": "Nincada" },
-          { "id": "291", "name": "Ninjask" },
-          { "id": "292", "name": "Shedinja" },
           { "id": "352", "name": "Kecleon" },
           { "id": "366", "name": "Clamperl" },
           { "id": "367", "name": "Huntail" },
@@ -730,6 +731,9 @@ var PokedexService = /** @class */ (function () {
           { "id": "287", "name": "Slakoth" },
           { "id": "288", "name": "Vigoroth" },
           { "id": "289", "name": "Slaking" },
+          { "id": "290", "name": "Nincada" },
+          { "id": "291", "name": "Ninjask" },
+          { "id": "292", "name": "Shedinja" },
           { "id": "293", "name": "Whismur" },
           { "id": "294", "name": "Loudred" },
           { "id": "295", "name": "Exploud" },
