@@ -369,6 +369,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "403", "name": "Shinx" },
           { "id": "404", "name": "Luxio" },
           { "id": "405", "name": "Luxray" },
+          { "id": "406", "name": "Budew" },
           { "id": "425", "name": "Drifloon" },
           { "id": "426", "name": "Drifblim" }];
         this.special = [{ "id": "172-santa", "name": "Santa Pichu" },
@@ -849,7 +850,9 @@ var PokedexService = /** @class */ (function () {
           { "id": "403", "name": "Shinx" },
           { "id": "404", "name": "Luxio" },
           { "id": "405", "name": "Luxray" },
+          { "id": "406", "name": "Budew" },
           { "id": "417", "name": "Pachirisu" },
+          { "id": "418", "name": "Buizel" },
           { "id": "425", "name": "Drifloon" },
           { "id": "426", "name": "Drifblim" },
           { "id": "427", "name": "Buneary" },
