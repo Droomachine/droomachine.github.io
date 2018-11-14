@@ -400,7 +400,7 @@ label, input, textarea{
     padding: 15px;
   }
   .mobileNav{
-    display:block;
+    display:inline-block;
   }
   .dropdown{
     display:none;
@@ -433,6 +433,12 @@ label, input, textarea{
 
   .line-break {
       display: none !important;
+  }
+  .mobileNav{
+    display:none;
+  }
+  .dropdown{
+    display:inline-block;
   }
 
 }
