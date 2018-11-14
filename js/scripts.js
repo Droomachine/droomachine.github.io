@@ -231,7 +231,7 @@ function startImport(data) {
 }
 
 function changeColour(num){
-  if (page == '/gender.html'|| page == '/Users/nikita/Desktop/droomachine.github.io/gender.html') {
+  if (page == '/gender.html'|| page == '/gender') {
     if (num.slice(-1) == "m") {
       document.getElementById(num).style.backgroundColor = mcolour;
     } else if (num.slice(-1) == "f") {
