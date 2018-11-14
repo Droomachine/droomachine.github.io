@@ -247,7 +247,9 @@ body {
 
 
 
-
+.mobileNav{
+  display:none;
+}
 
 .dropdown {
     display:inline-block;
@@ -339,7 +341,7 @@ label, input, textarea{
   font-size:18px;
 }
 
-@media only screen and (max-width: 919px) {
+@media only screen and (max-width: 800px) {
   .columns {
       width: 100px;
   }
@@ -397,7 +399,12 @@ label, input, textarea{
     display:block;
     padding: 15px;
   }
-
+  .mobileNav{
+    display:block;
+  }
+  .dropdown{
+    display:none;
+  }
   h1 {
     font-size:22px;
   }
@@ -419,7 +426,7 @@ label, input, textarea{
   }
 }
 
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 801px) {
   .topnav #myLinks {
     display: block !important;
   }
