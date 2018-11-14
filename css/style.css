@@ -401,6 +401,7 @@ label, input, textarea{
   }
   .mobileNav{
     display:inline-block;
+    width:100%;
   }
   .dropdown{
     display:none;
