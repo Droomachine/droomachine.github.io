@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123581449-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-123581449-1');
+  </script>
+  <meta charset="UTF-8">
+  <title>GoDex - Gender List</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="topnav">
+      <a href="/">
+        <img id="logo" src="logo.png" alt="Pokemon GO Pokedex">
+      </a>
+
+      <a href="#" class="icon" id="ham" onclick="menu()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <div class="line-break" id="line-break"></div>
+      <div class="topnav-right" id="myLinks">
+        <div class="dropdown">
+          <button class="dropbtn">Extra
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+          <a href="100" title="100%">💯100%</a>
+          <a href="gender" title="Gender">🚻Gender (WIP)</a>
+          <a href="lucky" title="Lucky">✨Lucky</a>
+          </div>
+        </div>
+        <a id="toggleChecked" href="#" title="toggleChecked">Hide</a>
+        <a id="export" href="#" title="Export">Export</a>
+        <a id="import"href="#" title="Import">Import</a>
+        <a href="https://twitter.com/GoDexOnline" title="Updates">Updates</a>
+        <a href="support" title="Help">Help</a>
+        <a href="https://ko-fi.com/dunajevs"title="Ko-fi">Buy me a coffee :)</a>
+      </div>
+  </div>
+
+  <div class="jump">
+    <a href="#gen1">Gen 1</a>
+    <a href="#gen2">Gen 2</a>
+    <a href="#gen3">Gen 3</a>
+    <a href="#alolan">Alolan</a>
+    <a href="#spinda">Spinda</a>
+  </div>
+
+    <div class="wrapper" ng-cloak ng-app="app" ng-controller="PokedexController as pokedex">
+      <div class="section">
+        <div class="sectionLabel" id="gen1">Gen 1</div>
+        <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.genderGen1 | orderBy:['id']:false | filter:CDFilter">
+          <label class="container" id="cont{{pokemon.id}}">
+            <input type="checkbox" name="dex" id="{{pokemon.id}}">
+            <span class="checkmark"></span>
+            <div class="pokemon-name">{{pokemon.name}}</div>
+            <figure data-href="/Users/nikita/Desktop/droomachine.github.io/imgs/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sectionLabel" id="gen2">Gen 2</div>
+        <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.genderGen2 | orderBy:['id']:false | filter:CDFilter">
+          <label class="container" id="cont{{pokemon.id}}">
+            <input type="checkbox" name="dex"  id="{{pokemon.id}}">
+            <span class="checkmark"></span>
+            <div class="pokemon-name">{{pokemon.name}}</div>
+            <figure data-href="/Users/nikita/Desktop/droomachine.github.io/imgs/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sectionLabel" id="gen3">Gen 3</div>
+        <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.genderGen3 | orderBy:['id']:false | filter:CDFilter">
+          <label class="container" id="cont{{pokemon.id}}">
+            <input type="checkbox" name="dex" id="{{pokemon.id}}">
+            <span class="checkmark"></span>
+            <div class="pokemon-name">{{pokemon.name}}</div>
+            <figure data-href="/Users/nikita/Desktop/droomachine.github.io/imgs/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sectionLabel" id="alolan">Alolan</div>
+        <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.genderAlolan | filter:CDFilter">
+          <label class="container" id="contalolan{{pokemon.id}}">
+            <input type="checkbox" id="alolan{{pokemon.id}}">
+            <span class="checkmark"></span>
+            <div class="pokemon-name">{{pokemon.name}}</div>
+            <figure data-href="/Users/nikita/Desktop/droomachine.github.io/imgs/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sectionLabel" id="spinda">Spinda Forms</div>
+        <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.genderSpinda | filter:CDFilter">
+          <label class="container" id="contspinda{{pokemon.id}}">
+            <input type="checkbox" id="spinda{{pokemon.id}}">
+            <span class="checkmark"></span>
+            <div class="pokemon-name">{{pokemon.name}}</div>
+            <figure data-href="/Users/nikita/Desktop/droomachine.github.io/imgs/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+          </label>
+        </div>
+      </div>
+
+      <br></br>
+      <input onclick="topFunction()" id="topBtn" title="Go to top"type="image" src="top.png" />
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/progressive-image.js"></script>
+
+
+    <footer>
+      <p style="font-size:18px">
+        Developed by Nikita Dunajevs 2018<br><br>
+        For updates follow on Twitter:<br><br>
+        <a href="https://twitter.com/GoDexOnline?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @GoDexOnline</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </p>
+      <p style="font-size:16px">
+        Special thanks to Raighar and Andrew Archibald!<br><br>
+        </p>
+      <p style="font-size:12px">
+        © All Respective Names And Images Are Trademarks of Nintendo, The Pokemon Company and Niantic
+      </p>
+      <br>
+      <button id="reset" onclick="confirmation()">Reset</button>
+      <br><br>
+    </footer>
+  </body>
+  </html>
