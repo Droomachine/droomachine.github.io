@@ -341,7 +341,7 @@ label, input, textarea{
   font-size:18px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .columns {
       width: 100px;
   }
@@ -426,7 +426,7 @@ label, input, textarea{
   }
 }
 
-@media only screen and (min-width: 801px) {
+@media only screen and (min-width: 901px) {
   .topnav #myLinks {
     display: block !important;
   }
