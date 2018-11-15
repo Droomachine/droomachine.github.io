@@ -119,6 +119,18 @@
     </div>
 
     <div class="section">
+      <div class="sectionLabel" id="mystery">Gen ?</div>
+      <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.mystery | orderBy:['id']:false | filter:CDFilter">
+        <label class="container" id="cont{{pokemon.id}}">
+          <input type="checkbox" name="dex" id="{{pokemon.id}}">
+          <span class="checkmark"></span>
+          <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
+          <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+        </label>
+      </div>
+    </div>
+
+    <div class="section">
       <div class="sectionLabel" id="shiny">Shinies</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.shinies | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="contshiny{{pokemon.id}}">

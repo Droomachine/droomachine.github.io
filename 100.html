@@ -52,6 +52,7 @@
         <a href="https://ko-fi.com/dunajevs"title="Ko-fi">Buy me a coffee :)</a>
       </div>
   </div>
+
   <div class="jump">
     <a href="#gen1">Gen 1</a>
     <a href="#gen2">Gen 2</a>
@@ -104,6 +105,18 @@
       <div class="section">
         <div class="sectionLabel" id="gen4">Gen 4</div>
         <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.gen4 | orderBy:['id']:false | filter:CDFilter">
+          <label class="container" id="cont{{pokemon.id}}">
+            <input type="checkbox" name="dex" id="{{pokemon.id}}">
+            <span class="checkmark"></span>
+            <div class="pokemon-name">#{{pokemon.id}} {{pokemon.name}}</div>
+            <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sectionLabel" id="mystery">Gen ?</div>
+        <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.mystery | orderBy:['id']:false | filter:CDFilter">
           <label class="container" id="cont{{pokemon.id}}">
             <input type="checkbox" name="dex" id="{{pokemon.id}}">
             <span class="checkmark"></span>

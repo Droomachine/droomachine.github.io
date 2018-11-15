@@ -1,5 +1,5 @@
 var page = window.location.pathname;
-var pokemonNum = 397;
+var pokemonNum = 429;
 var item;
 var colour;
 $(document).ready(function () {
@@ -300,6 +300,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "099", "name": "Kingler" },
           { "id": "104", "name": "Cubone" },
           { "id": "105", "name": "Marowak" },
+          { "id": "125", "name": "Electabuzz" },
           { "id": "126", "name": "Magmar" },
           { "id": "127", "name": "Pinsir" },
           { "id": "129", "name": "Magicarp", },
@@ -347,6 +348,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "210", "name": "Granbull" },
           { "id": "228", "name": "Houndour" },
           { "id": "229", "name": "Houndoom" },
+          { "id": "239", "name": "Elekid" },
           { "id": "240", "name": "Magby" },
           { "id": "246", "name": "Larvitar" },
           { "id": "247", "name": "Pupitar" },
@@ -391,7 +393,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "405", "name": "Luxray" },
           { "id": "406", "name": "Budew" },
           { "id": "425", "name": "Drifloon" },
-          { "id": "426", "name": "Drifblim" }];
+          { "id": "426", "name": "Drifblim" },
+          { "id": "466", "name": "Electivire" }];
         this.special = [{ "id": "172-santa", "name": "Santa Pichu" },
           { "id": "025-santa", "name": "Santa Pikachu" },
           { "id": "026-santa", "name": "Santa Raichu" },
@@ -871,12 +874,16 @@ var PokedexService = /** @class */ (function () {
           { "id": "404", "name": "Luxio" },
           { "id": "405", "name": "Luxray" },
           { "id": "406", "name": "Budew" },
+          { "id": "407", "name": "Roserade" },
           { "id": "417", "name": "Pachirisu" },
           { "id": "418", "name": "Buizel" },
+          { "id": "419", "name": "Floatzel" },
           { "id": "425", "name": "Drifloon" },
           { "id": "426", "name": "Drifblim" },
           { "id": "427", "name": "Buneary" },
           { "id": "428", "name": "Lopunny" },
+          { "id": "429", "name": "Mismagius" },
+          { "id": "430", "name": "Honchkrow" },
           { "id": "434", "name": "Stunky" },
           { "id": "435", "name": "Skuntank" },
           { "id": "441", "name": "Chatot" },
@@ -884,7 +891,18 @@ var PokedexService = /** @class */ (function () {
           { "id": "447", "name": "Riolu" },
           { "id": "448", "name": "Lucario" },
           { "id": "455", "name": "Carnivine" },
+          { "id": "461", "name": "Weavile" },
+          { "id": "464", "name": "Rhyperior" },
+          { "id": "466", "name": "Electivire" },
+          { "id": "467", "name": "Magmortar" },
+          { "id": "468", "name": "Togekiss" },
+          { "id": "469", "name": "Yanmega" },
+          { "id": "472", "name": "Gliscor" },
+          { "id": "474", "name": "Porygon-Z" },
+          { "id": "477", "name": "Dusknoir" },
           { "id": "487", "name": "Giratina" }];
+        this.mystery = [{ "id": "808", "name": "Meltan" },
+          { "id": "809", "name": "Melmetal" }];
         this.genderShinies = [{ "id": "001-m", "name": "Bulbasaur ♂" },
           { "id": "001-f", "name": "Bulbasaur ♀" },
           { "id": "002-m", "name": "Ivysaur ♂" },
