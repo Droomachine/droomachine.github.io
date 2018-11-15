@@ -896,7 +896,6 @@ var PokedexService = /** @class */ (function () {
           { "id": "466", "name": "Electivire" },
           { "id": "467", "name": "Magmortar" },
           { "id": "468", "name": "Togekiss" },
-          { "id": "469", "name": "Yanmega" },
           { "id": "472", "name": "Gliscor" },
           { "id": "474", "name": "Porygon-Z" },
           { "id": "477", "name": "Dusknoir" },
