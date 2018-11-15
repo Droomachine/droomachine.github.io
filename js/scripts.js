@@ -1,5 +1,5 @@
 var page = window.location.pathname;
-var pokemonNum = 429;
+var pokemonNum = 428;
 var item;
 var colour;
 $(document).ready(function () {
