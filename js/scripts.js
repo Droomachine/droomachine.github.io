@@ -287,6 +287,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "076", "name": "Golem" },
           { "id": "077", "name": "Ponyta" },
           { "id": "078", "name": "Rapidash" },
+          { "id": "081", "name": "Magnemite" },
+          { "id": "082", "name": "Magneton" },
           { "id": "088", "name": "Grimer" },
           { "id": "089", "name": "Muk" },
           { "id": "090", "name": "Shellder" },
