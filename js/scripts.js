@@ -343,6 +343,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "196", "name": "Espeon" },
           { "id": "197", "name": "Umbreon" },
           { "id": "198", "name": "Murkrow" },
+          { "id": "200", "name": "Misdreavus" },
           { "id": "202", "name": "Wobbuffet" },
           { "id": "204", "name": "Pineco" },
           { "id": "205", "name": "Forretress" },
@@ -396,6 +397,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "406", "name": "Budew" },
           { "id": "425", "name": "Drifloon" },
           { "id": "426", "name": "Drifblim" },
+          { "id": "429", "name": "Mismagius" },
           { "id": "466", "name": "Electivire" }];
         this.special = [{ "id": "172-santa", "name": "Santa Pichu" },
           { "id": "025-santa", "name": "Santa Pikachu" },
@@ -440,6 +442,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "105-a", "name": "Marowak" }];
         this.spinda = [{ "id": "327", "name": "#1" },
           { "id": "327-3", "name": "#3" },
+          { "id": "327-6", "name": "#6" },
           { "id": "327-7", "name": "#7" },
           { "id": "327-8", "name": "#8" }];
         this.unowns = [{ "id": "201-a", "name": "A" },
@@ -1227,6 +1230,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "327-f", "name": "#1 ♀" },
           { "id": "327-3-m", "name": "#3 ♂" },
           { "id": "327-3-f", "name": "#3 ♀" },
+          { "id": "327-6-m", "name": "#6 ♂" },
+          { "id": "327-6-f", "name": "#6 ♀" },
           { "id": "327-7-m", "name": "#7 ♂" },
           { "id": "327-7-f", "name": "#7 ♀" },
           { "id": "327-8-m", "name": "#8 ♂" },
