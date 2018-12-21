@@ -1,5 +1,5 @@
 var page = window.location.pathname;
-var pokemonNum = 428;
+var pokemonNum = 443;
 var item;
 var colour;
 $(document).ready(function () {
@@ -277,6 +277,10 @@ var PokedexService = /** @class */ (function () {
           { "id": "026-fragment", "name": "Fragment Raichu" },
           { "id": "025-halloween", "name": "Witch Pikachu" },
           { "id": "026-halloween", "name": "Witch Raichu" },
+          { "id": "025-santa", "name": "Santa Pikachu" },
+          { "id": "026-santa", "name": "Santa Raichu" },
+          { "id": "027", "name": "Sandshrew" },
+          { "id": "028", "name": "Sandslash" },
           { "id": "029", "name": "Nidoran" },
           { "id": "030", "name": "Nidorina" },
           { "id": "031", "name": "Nidoqueen" },
@@ -331,6 +335,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "172", "name": "Pichu" },
           { "id": "172-party", "name": "Party Pichu" },
           { "id": "172-halloween", "name": "Witch Pichu" },
+          { "id": "172-santa", "name": "Santa Pichu" },
           { "id": "175", "name": "Togepi" },
           { "id": "176", "name": "Togetic" },
           { "id": "177", "name": "Natu" },
@@ -338,6 +343,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "179", "name": "Mareep" },
           { "id": "180", "name": "Flaafy" },
           { "id": "181", "name": "Ampharos" },
+          { "id": "184", "name": "Azumarill" },
           { "id": "191", "name": "Sunkern" },
           { "id": "192", "name": "Sunflora" },
           { "id": "196", "name": "Espeon" },
@@ -349,6 +355,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "205", "name": "Forretress" },
           { "id": "209", "name": "Snubbull" },
           { "id": "210", "name": "Granbull" },
+          { "id": "225", "name": "Delibird" },
           { "id": "228", "name": "Houndour" },
           { "id": "229", "name": "Houndoom" },
           { "id": "239", "name": "Elekid" },
@@ -364,6 +371,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "262", "name": "Mighyena" },
           { "id": "296", "name": "Makuhita" },
           { "id": "297", "name": "Hariyama" },
+          { "id": "298", "name": "Azurill" },
           { "id": "302", "name": "Sableye" },
           { "id": "303", "name": "Mawile" },
           { "id": "304", "name": "Aron" },
@@ -889,13 +897,26 @@ var PokedexService = /** @class */ (function () {
           { "id": "428", "name": "Lopunny" },
           { "id": "429", "name": "Mismagius" },
           { "id": "430", "name": "Honchkrow" },
+          { "id": "433", "name": "Chingling" },
           { "id": "434", "name": "Stunky" },
           { "id": "435", "name": "Skuntank" },
+          { "id": "436", "name": "Bronzor" },
+          { "id": "437", "name": "Bronzong" },
           { "id": "441", "name": "Chatot" },
           { "id": "442", "name": "Spiritomb" },
+          { "id": "446", "name": "Munchlax" },
           { "id": "447", "name": "Riolu" },
           { "id": "448", "name": "Lucario" },
+          { "id": "451", "name": "Skorupi" },
+          { "id": "452", "name": "Drapion" },
+          { "id": "453", "name": "Croagunk" },
+          { "id": "454", "name": "Toxicroak" },
           { "id": "455", "name": "Carnivine" },
+          { "id": "456", "name": "Finneon" },
+          { "id": "457", "name": "Lumineon" },
+          { "id": "458", "name": "Mantyke" },
+          { "id": "459", "name": "Snover" },
+          { "id": "460", "name": "Abomasnow" },
           { "id": "461", "name": "Weavile" },
           { "id": "464", "name": "Rhyperior" },
           { "id": "466", "name": "Electivire" },
@@ -904,7 +925,9 @@ var PokedexService = /** @class */ (function () {
           { "id": "472", "name": "Gliscor" },
           { "id": "474", "name": "Porygon-Z" },
           { "id": "477", "name": "Dusknoir" },
-          { "id": "487", "name": "Giratina" }];
+          { "id": "485", "name": "Heatran" },
+          { "id": "487", "name": "Giratina" },
+          { "id": "488", "name": "Cresselia" }];
         this.mystery = [{ "id": "808", "name": "Meltan" },
           { "id": "809", "name": "Melmetal" }];
         this.genderShinies = [{ "id": "001-m", "name": "Bulbasaur ♂" },
