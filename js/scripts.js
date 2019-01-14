@@ -75,17 +75,16 @@ $(document).ready(function () {
   });
 });
 $("#export").on("click", startExport);
-
+$("#import").on("click", function() {
+  if (screen.width<"601"){
+    startImport(prompt("Please paste your save:", ""));
+  }
+  else{
+    alert("To import data, simply paste the copied data!");
+  }
+ });
 $("#toString").on("click", toString);
 $("#toggleChecked").on("click", toggleChecked);
-
-$("#import").on("click", function(e) {
-
-  var clipboardData = e.clipboardData || e.originalEvent.clipboardData;
-  startImport(clipboardData.getData('text/plain'));
-
-
-});
 $(window).on("paste", function(e) {
   startImport(e.originalEvent.clipboardData.getData("text/plain"));
 });
