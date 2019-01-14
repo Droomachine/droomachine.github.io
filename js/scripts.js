@@ -82,7 +82,7 @@ $("#toggleChecked").on("click", toggleChecked);
 $("#import").on("click", function(e) {
 
   var clipboardData = e.clipboardData || e.originalEvent.clipboardData;
-  startImport(clipboardData.getData('text/plain');
+  startImport(clipboardData.getData('text/plain'));
 
 
 });
