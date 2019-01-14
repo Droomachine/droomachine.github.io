@@ -79,10 +79,14 @@ $("#export").on("click", startExport);
 $("#toString").on("click", toString);
 $("#toggleChecked").on("click", toggleChecked);
 
-$("#import").on("click", function() {
-
-  var clipboardData = window.clipboardData || window.originalEvent.clipboardData;
-  startImport(clipboardData.getData('text/plain'));
+$("#import").on("click", function(e) {
+  var clipboardData;
+  if (window.clipboardData && window.clipboardData.getData) { // IE
+      clipboardData = window.clipboardData.getData('Text');
+    } else {
+      clipboardData = (e.originalEvent || e).clipboardData.getData('text/plain');
+    }
+  startImport(clipboardData);
 
 
 });
