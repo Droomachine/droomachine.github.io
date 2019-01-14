@@ -79,9 +79,9 @@ $("#export").on("click", startExport);
 $("#toString").on("click", toString);
 $("#toggleChecked").on("click", toggleChecked);
 
-$("#import").on("click", function(e) {
+$("#import").on("click", function() {
 
-  var clipboardData = e.clipboardData || e.originalEvent.clipboardData;
+  var clipboardData = window.clipboardData || window.originalEvent.clipboardData;
   startImport(clipboardData.getData('text/plain'));
 
 
