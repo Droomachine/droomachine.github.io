@@ -76,12 +76,7 @@ $(document).ready(function () {
 });
 $("#export").on("click", startExport);
 $("#import").on("click", function() {
-  if (screen.width<"601"){
     startImport(prompt("Please paste your save:", ""));
-  }
-  else{
-    alert("To import data, simply paste the copied data!");
-  }
  });
 $("#toString").on("click", toString);
 $("#toggleChecked").on("click", toggleChecked);
