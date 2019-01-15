@@ -404,6 +404,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "375", "name": "Metang" },
           { "id": "376", "name": "Metagross" },
           { "id": "382", "name": "Kyogre" },
+          { "id": "383", "name": "Groudon" },
           { "id": "403", "name": "Shinx" },
           { "id": "404", "name": "Luxio" },
           { "id": "405", "name": "Luxray" },
