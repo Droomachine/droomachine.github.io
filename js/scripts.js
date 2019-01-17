@@ -461,6 +461,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "105-a", "name": "Marowak" }];
         this.spinda = [{ "id": "327", "name": "#1" },
           { "id": "327-3", "name": "#3" },
+          { "id": "327-5", "name": "#5" },
           { "id": "327-6", "name": "#6" },
           { "id": "327-7", "name": "#7" },
           { "id": "327-8", "name": "#8" }];
