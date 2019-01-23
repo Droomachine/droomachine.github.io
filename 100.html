@@ -57,11 +57,11 @@
     <a href="#gen2">Gen 2</a>
     <a href="#gen3">Gen 3</a>
     <a href="#gen4">Gen 4</a>
-    <a href="#shiny">Shinies</a>
+    <a href="#shiny">Shiny</a>
     <a href="#special">Special</a>
     <a href="#alolan">Alolan</a>
     <a href="#spinda">Spinda</a>
-    <a href="#unowns">Unowns</a>
+    <a href="#unowns">Unown</a>
   </div>
 
     <div class="wrapper" ng-cloak ng-app="app" ng-controller="PokedexController as pokedex">
@@ -126,7 +126,7 @@
       </div>
 
       <div class="section">
-        <div class="sectionLabel" id="shiny">Shinies</div>
+        <div class="sectionLabel" id="shiny">Shiny</div>
         <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.shinies | orderBy:['id']:false | filter:CDFilter">
           <label class="container" id="contshiny{{pokemon.id}}">
             <input type="checkbox" id="shiny{{pokemon.id}}">
@@ -161,7 +161,7 @@
       </div>
 
       <div class="section">
-        <div class="sectionLabel" id="spinda">Spinda Forms</div>
+        <div class="sectionLabel" id="spinda">Spinda</div>
         <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.spinda | filter:CDFilter">
           <label class="container" id="contspinda{{pokemon.id}}">
             <input type="checkbox" id="spinda{{pokemon.id}}">
@@ -173,7 +173,7 @@
       </div>
 
       <div class="section">
-        <div class="sectionLabel" id="unowns">Unowns</div>
+        <div class="sectionLabel" id="unowns">Unown</div>
         <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.unowns | filter:CDFilter">
           <label class="container" id="contunowns{{pokemon.id}}">
             <input type="checkbox" id="unowns{{pokemon.id}}">
