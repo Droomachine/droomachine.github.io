@@ -34,7 +34,7 @@ $(document).ready(function () {
       if (localStorage.getItem('hideChecked') == "false"){
         document.getElementById(num).parentElement.style.display = 'inline-grid';
       } else {
-        $("#toggleChecked").html("Show");
+        $("#toggleChecked").html("<i class='fas fa-eye fa-lg'></i>");
         document.getElementById(num).parentElement.style.display = 'none';
       }
     })
