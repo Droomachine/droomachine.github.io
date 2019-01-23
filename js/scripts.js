@@ -465,6 +465,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "327-6", "name": "#6" },
           { "id": "327-7", "name": "#7" },
           { "id": "327-8", "name": "#8" }];
+        this.deoxys = [{ "id": "386", "name": "Normal" },
+          { "id": "386-a", "name": "Attack Forme" }];
         this.unowns = [{ "id": "201-a", "name": "A" },
           { "id": "201-b", "name": "B" },
           { "id": "201-c", "name": "C" },

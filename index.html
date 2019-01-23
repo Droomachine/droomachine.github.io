@@ -130,7 +130,7 @@
     </div>
 
     <div class="section">
-      <div class="sectionLabel" id="shiny">Shinies</div>
+      <div class="sectionLabel" id="shiny">Shiny</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.shinies | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="contshiny{{pokemon.id}}">
           <input type="checkbox" id="shiny{{pokemon.id}}">
@@ -165,7 +165,7 @@
     </div>
 
     <div class="section">
-      <div class="sectionLabel" id="spinda">Spinda Forms</div>
+      <div class="sectionLabel" id="spinda">Spinda</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.spinda | filter:CDFilter">
         <label class="container" id="contspinda{{pokemon.id}}">
           <input type="checkbox" id="spinda{{pokemon.id}}">
@@ -177,7 +177,19 @@
     </div>
 
     <div class="section">
-      <div class="sectionLabel" id="unowns">Unowns</div>
+      <div class="sectionLabel" id="deoxys">Deoxys</div>
+      <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.deoxys | filter:CDFilter">
+        <label class="container" id="contdeoxys{{pokemon.id}}">
+          <input type="checkbox" id="deoxys{{pokemon.id}}">
+          <span class="checkmark"></span>
+          <div class="pokemon-name">{{pokemon.name}}</div>
+          <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
+        </label>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sectionLabel" id="unowns">Unown</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.unowns | filter:CDFilter">
         <label class="container" id="contunowns{{pokemon.id}}">
           <input type="checkbox" id="unowns{{pokemon.id}}">
