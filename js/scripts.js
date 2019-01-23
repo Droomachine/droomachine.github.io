@@ -169,12 +169,12 @@ function toggleChecked(){
     x.css("display", "none");
     localStorage.setItem('hideChecked', true);
     hideLabels();
-    $("#toggleChecked").html("Show");
+    $("#toggleChecked").html("<i class='fas fa-eye-slash fa-lg'></i>");
   } else {
     x.css("display", "inline-grid");
     localStorage.setItem('hideChecked', false);
     showLabels();
-    $("#toggleChecked").html("Hide");
+    $("#toggleChecked").html("<i class='fas fa-eye fa-lg'></i>");
   }
 }
 
