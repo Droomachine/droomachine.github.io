@@ -44,6 +44,7 @@
         <a href="lucky" title="Lucky">✨Lucky</a>
         </div>
         <a id="toggleChecked" href="#" title="Hide"><i class="fas fa-eye-slash fa-lg"></i></a>
+        <a id="stats" href="#" title="Stats"><i class="fas fa-percent fa-lg"></i></a>
         <a id="export" href="#" title="Export"><i class="fas fa-file-export fa-lg"></i></a>
         <a id="import"href="#" title="Import"><i class="fas fa-file-import fa-lg"></i></a>
         <a href="support" title="Help"><i class="fas fa-question-circle fa-lg"></i></a>
@@ -54,6 +55,12 @@
 
   <div id="myProgress"><div id="barLabel"></div>
     <div id="myBar"></div>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modalText" style="text-align: center;">Some text in the Modal..</p>
+    </div>
   </div>
 
   <div class="jump">
@@ -134,7 +141,7 @@
       <div class="sectionLabel" id="shiny">Shiny</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.shinies | orderBy:['id']:false | filter:CDFilter">
         <label class="container" id="contshiny{{pokemon.id}}">
-          <input type="checkbox" id="shiny{{pokemon.id}}">
+          <input type="checkbox" name="shiny" id="shiny{{pokemon.id}}">
           <span class="checkmark"></span>
           <div class="pokemon-name">{{pokemon.name}}</div><figure data-href="https://www.serebii.net/pokemongo/pokemon/shiny/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
         </label>
@@ -145,7 +152,7 @@
       <div class="sectionLabel" id="special">Special</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.special | filter:CDFilter">
         <label class="container" id="contspecial{{pokemon.id}}">
-          <input type="checkbox" id="special{{pokemon.id}}">
+          <input type="checkbox" name="special" id="special{{pokemon.id}}">
           <span class="checkmark"></span>
           <div class="pokemon-name">{{pokemon.name}}</div>
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
@@ -157,7 +164,7 @@
       <div class="sectionLabel" id="alolan">Alolan</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.alolan | filter:CDFilter">
         <label class="container" id="contalolan{{pokemon.id}}">
-          <input type="checkbox" id="alolan{{pokemon.id}}">
+          <input type="checkbox" name="alolan" id="alolan{{pokemon.id}}">
           <span class="checkmark"></span>
           <div class="pokemon-name">{{pokemon.name}}</div>
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
@@ -169,7 +176,7 @@
       <div class="sectionLabel" id="spinda">Spinda</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.spinda | filter:CDFilter">
         <label class="container" id="contspinda{{pokemon.id}}">
-          <input type="checkbox" id="spinda{{pokemon.id}}">
+          <input type="checkbox" name="spinda" id="spinda{{pokemon.id}}">
           <span class="checkmark"></span>
           <div class="pokemon-name">{{pokemon.name}}</div>
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
@@ -181,7 +188,7 @@
       <div class="sectionLabel" id="deoxys">Deoxys</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.deoxys | filter:CDFilter">
         <label class="container" id="contdeoxys{{pokemon.id}}">
-          <input type="checkbox" id="deoxys{{pokemon.id}}">
+          <input type="checkbox" name="deoxys" id="deoxys{{pokemon.id}}">
           <span class="checkmark"></span>
           <div class="pokemon-name">{{pokemon.name}}</div>
           <figure data-href="https://www.serebii.net/pokemongo/pokemon/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
@@ -193,7 +200,7 @@
       <div class="sectionLabel" id="unowns">Unown</div>
       <div class="columns" ng-repeat="pokemon in pokedex.pokedexService.unowns | filter:CDFilter">
         <label class="container" id="contunowns{{pokemon.id}}">
-          <input type="checkbox" id="unowns{{pokemon.id}}">
+          <input type="checkbox" name="unown" id="unowns{{pokemon.id}}">
           <span class="checkmark"></span>
           <div class="pokemon-name">{{pokemon.name}}</div>
           <figure data-href="/imgs/pokemon/unown/{{pokemon.id}}.png" class="pokemon-image progressive replace"></figure>
@@ -208,6 +215,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>
   <script src="js/progressive-image.js"></script>
 

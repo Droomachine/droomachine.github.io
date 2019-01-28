@@ -1,19 +1,21 @@
-var page = window.location.pathname;
-var pokemonNum = 443;
+var page = window.location.pathname.split("/").pop();
 var item;
 var colour;
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("stats");
+var span = document.getElementsByClassName("close")[0];
 $(document).ready(function () {
 
-  if (page == '/' || page == '/index.html' || page == '/index') {
+  if (page == '' || page == 'index.html' || page == 'index') {
     item = "checked-checkboxes";
     colour = "#62D17A";
-  } else if (page == '/lucky.html' || page == '/lucky') {
+  } else if (page == 'lucky.html' || page == 'lucky') {
     item = "lucky-checked-checkboxes";
     colour = "#FFDF7F";
-  } else if (page == '/100.html'|| page == '/100') {
+  } else if (page == '100.html'|| page == '100') {
     item = "100-checked-checkboxes";
     colour = "#F5A65B";
-  } else if (page == '/gender.html'|| page == '/gender') {
+  } else if (page == 'gender.html'|| page == 'gender') {
     item = "gender-checked-checkboxes";
     mcolour = "#66acd0";
     fcolour = "#F4A698";
@@ -38,8 +40,9 @@ $(document).ready(function () {
         document.getElementById(num).parentElement.style.display = 'none';
       }
     })
-    if (page == '/' || page == '/index.html' || page == '/index') {
+    if (page == '' || page == 'index.html' || page == 'index') {
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
+      var pokemonNum = $('input[name=dex]').length;
       var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
       document.getElementById("myBar").style.width = width + '%';
       document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / " + pokemonNum;
@@ -65,8 +68,9 @@ $(document).ready(function () {
     else {
       document.getElementById(num).style.backgroundColor = "#D3D3D3";
     }
-    if (page == '/' || page == '/index.html' || page == '/index') {
+    if (page == '' || page == 'index.html' || page == 'index') {
       var checkedBoxes = document.querySelectorAll('input[name=dex]:checked');
+      var pokemonNum = $('input[name=dex]').length;
       var width = Math.round(checkedBoxes.length / pokemonNum * 10000) / 100;
       document.getElementById("myBar").style.width = width + '%';
       document.getElementById("barLabel").innerHTML = "Pokedex Completion: " + width * 1  + '%' + " | " + checkedBoxes.length + " / " + pokemonNum;
@@ -74,10 +78,40 @@ $(document).ready(function () {
     localStorage.setItem(item, JSON.stringify(arrCheckedCheckboxes));
   });
 });
+
+$(window).on("click", function(e) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+});
+$(btn).on("click", function() {
+   modal.style.display = "block";
+   document.getElementById("modalText").innerHTML = "<h1>Pokedex Completion</h1> <h2>Normal: " + stats("dex") + "</h2> <div class='progress'>    <div class='progress-bar progress-bar-striped active' role='progressbar' style='width:" + roundPercent("dex")+"%'>" + percentage("dex") +  "% </div>  </div>" +
+                                                                      "<h2>Shiny: " + stats("shiny") + "</h2> <div class='progress'>    <div class='progress-bar progress-bar-striped active' role='progressbar' style='width:" + roundPercent("shiny")+"%'>" + percentage("shiny") +  "% </div>  </div>" +
+                                                                      "<h2>Special: " + stats("special") + "</h2> <div class='progress'>    <div class='progress-bar progress-bar-striped active' role='progressbar' style='width:" + roundPercent("special")+"%'>" + percentage("special") +  "% </div>  </div>" +
+                                                                      "<h2>Alolan: " + stats("alolan") + "</h2> <div class='progress'>    <div class='progress-bar progress-bar-striped active' role='progressbar' style='width:" + roundPercent("alolan")+"%'>" + percentage("alolan") +  "% </div>  </div>" +
+                                                                      "<h2>Spinda: " + stats("spinda") + "</h2> <div class='progress'>    <div class='progress-bar progress-bar-striped active' role='progressbar' style='width:" + roundPercent("spinda")+"%'>" + percentage("spinda") +  "% </div>  </div>" +
+                                                                      "<h2>Deoxys: " + stats("deoxys") + "</h2> <div class='progress'>    <div class='progress-bar progress-bar-striped active' role='progressbar' style='width:" + roundPercent("deoxys")+"%'>" + percentage("deoxys") +  "% </div>  </div>" +
+                                                                      "<h2>Unown: " + stats("unown") + "</h2> <div class='progress'>    <div class='progress-bar progress-bar-striped active' role='progressbar' style='width:" + roundPercent("unown")+"%'>" + percentage("unown") +  "% </div>  </div>";
+});
+function roundPercent(name) {
+  return Math.round(percentage(name));
+}
+function percentage(name) {
+  return Math.round($('input[name='+name+']:checked').length / $('input[name='+name+']').length * 10000)/100;
+}
+
+function stats(name) {
+  return $('input[name='+name+']:checked').length + " / " + $('input[name='+name+']').length;
+}
+
+$(span).on("click", function() {
+  modal.style.display = "none";
+});
 $("#export").on("click", startExport);
 $("#import").on("click", function() {
-    startImport(prompt("Please paste your save:", ""));
- });
+  startImport(prompt("Please paste your save:", ""));
+});
 $("#toString").on("click", toString);
 $("#toggleChecked").on("click", toggleChecked);
 $(window).on("paste", function(e) {
@@ -226,7 +260,7 @@ function startImport(data) {
 }
 
 function changeColour(num){
-  if (page == '/gender.html'|| page == '/gender') {
+  if (page == 'gender.html'|| page == 'gender') {
     if (num.slice(-1) == "m") {
       document.getElementById(num).style.backgroundColor = mcolour;
     } else if (num.slice(-1) == "f") {
