@@ -975,6 +975,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "472", "name": "Gliscor" },
           { "id": "474", "name": "Porygon-Z" },
           { "id": "477", "name": "Dusknoir" },
+          { "id": "484", "name": "Palkia" },
           { "id": "485", "name": "Heatran" },
           { "id": "487", "name": "Giratina" },
           { "id": "488", "name": "Cresselia" }];
