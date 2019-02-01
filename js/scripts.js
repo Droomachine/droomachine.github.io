@@ -962,6 +962,7 @@ var PokedexService = /** @class */ (function () {
           { "id": "435", "name": "Skuntank" },
           { "id": "436", "name": "Bronzor" },
           { "id": "437", "name": "Bronzong" },
+          { "id": "438", "name": "Bonsly" },
           { "id": "441", "name": "Chatot" },
           { "id": "442", "name": "Spiritomb" },
           { "id": "446", "name": "Munchlax" },
