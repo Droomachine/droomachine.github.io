@@ -314,6 +314,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "029", "name": "Nidoran" },
           { "id": "030", "name": "Nidorina" },
           { "id": "031", "name": "Nidoqueen" },
+          { "id": "054", "name": "Psyduck" },
+          { "id": "055", "name": "Golduck" },
           { "id": "058", "name": "Growlithe" },
           { "id": "059", "name": "Arcanine" },
           { "id": "074", "name": "Geodude" },
