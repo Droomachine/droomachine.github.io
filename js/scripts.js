@@ -425,6 +425,8 @@ var PokedexService = /** @class */ (function () {
           { "id": "315", "name": "Roselia" },
           { "id": "320", "name": "Wailmer" },
           { "id": "321", "name": "Waillord" },
+          { "id": "325", "name": "Spoink" },
+          { "id": "326", "name": "Grumpig" },
           { "id": "333", "name": "Swablu" },
           { "id": "334", "name": "Altaria" },
           { "id": "349", "name": "Feebas" },
