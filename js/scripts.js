@@ -458,7 +458,9 @@ var PokedexService = /** @class */ (function () {
           { "id": "467", "name": "Magmortar" },
           { "id": "468", "name": "Togekiss" },
           { "id": "477", "name": "Dusknoir" },
-          { "id": "478", "name": "Froslass" }];
+          { "id": "478", "name": "Froslass" },
+          { "id": "808", "name": "Meltan" },
+          { "id": "809", "name": "Melmetal" }];
         this.special = [{ "id": "172-santa", "name": "Santa Pichu" },
           { "id": "025-santa", "name": "Santa Pikachu" },
           { "id": "026-santa", "name": "Santa Raichu" },
